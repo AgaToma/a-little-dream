@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META TAGS -->
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Aga Tomaszewska">
+    <meta name="description"
+        content="A Little Dream offers 3 categories of products to make bedtime the best part of the day">
+    <meta name="keywords" content="kids bed lamps, colorful lights, children story books, plush toys, teddies, 
+        bedtime stories, kids bedtime, childrens bedtime, online children bedtime products">
+
+    {% endblock %}
+
+    {% block corecss %}
+    <!--Bootsrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+        integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--My custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% endblock %}
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+
+    <!-- JS -->
+    {% block corejs %}
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/d0faf7c48b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <!--Bootstrap JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+        integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {% endblock %}
+
+
+    <title>A Little Dream - {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    <!-- Header -->
+    {% include 'includes/header.html' %}
+
+    <!-- Delivery banner -->
+    {% include 'includes/delivery_banner.html' %}
+
+    <!-- Messages/toasts -->
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main>{% block content %} {% endblock %}</main>
+
+    <!-- Footer -->
+    {% include 'includes/footer.html' %}
+
+    {% block postloadjs %}
+    <!-- Toasts script-->
+    <script>
+        $('.toast').toast('show');
+    </script>
+    {% endblock %}
+
+    <!-- Mailchimp scripts -->
+    {% block mailchimpjs %}
+
+    {% endblock %}
+
+</body>
+
+</html>
