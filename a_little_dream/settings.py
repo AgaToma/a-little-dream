@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'storages',
     # My Apps
+    'home',
 
 ]
 
