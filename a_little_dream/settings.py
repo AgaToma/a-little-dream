@@ -35,7 +35,7 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = development
 
 ALLOWED_HOSTS = ['8000-agatoma-alittledream-crnpu8de9mg.ws-eu104.gitpod.io',
-                 'herokuapp.com', 'localhost',]
+                 'a-little-dream-23a29b7469db.herokuapp.com/', 'localhost',]
 
 
 # Application definition
