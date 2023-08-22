@@ -32,18 +32,21 @@ main {
 
 }
 
-
-.story-card {
-    background-image: url('../../media/story-card.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 20rem;
+.category-card {
+    margin: 2rem;
+    height:12rem;
 }
 
-.story-slider {
-    display: block;
+.category-card img {
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.category-slider {
+    
     width: 100%;
-    height: auto;
 }
 
 .overlay {
@@ -57,6 +60,16 @@ main {
     transition: .5s ease;
 }
 
-.story-card:hover .overlay {
+.category-card:hover .overlay {
     height: 100%;
 }
+
+.category-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    margin: 0;
+    padding: 0;
+  }

@@ -28,4 +28,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ## Credits
 Hero backgrond image - pexels-francesco-ungaro-998641
 Hero front image - pexels-ron-lach-8262594
+Hero front image 2 - pexels-cottonbro-studio-6670074
+Hero front image 3 - pexels-cottonbro-studio-5801245
+Books - pexels-pavel-danilyuk-7938252
+Lights - pexels-matheus-bertelli-13869602
 Stories - johannes-plenio-DKix6Un55mw-unsplash
