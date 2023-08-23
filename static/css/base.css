@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Permanent+Marker&display=swap');
+
 /* Site wide styles*/
 html,
 body {
@@ -16,20 +18,41 @@ main {
 }
 
 /* Landing page */
-.hero-backrground {
+.hero-background {
     background-image: url('../../media/hero-background.webp');
     height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1%;
+    margin-bottom: 2%;
+}
+
+.hero-wrap1,
+.hero-wrap2 {
+    width: 50%;
+    height:100%;
+}
+
+.hero-wrap2 {
+    display:flex;
+    justify-content: center;
+}
+
+.hero-wrap1 h1 {
+    color:rgb(239, 247, 247);
+    margin: 6%;
+    font-family: 'Caveat', cursive;
+    font-size: 4rem;
+}
+
+.hero-front2 {
+    width:80%;
+    border-radius: 5px;
+    margin-left:10%;
 }
 
 .hero-front {
-    float: right;
-    height: 90%;
     border-radius: 5px;
-    margin-right: 10%;
-
 }
 
 .category-card {
@@ -72,4 +95,14 @@ main {
     color:white;
     margin: 0;
     padding: 0;
+  }
+
+  .story-container {
+    background-color:rgb(185 217 239);
+  }
+
+  @media (max-width: 450px) {
+    .hero-wrap2 {
+        display: none;
+    }
   }
