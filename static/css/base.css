@@ -17,6 +17,11 @@ main {
     margin-top: 10vh;
 }
 
+/* Header */
+.logo {
+    border-radius: 5px;
+}
+
 /* Landing page */
 .hero-background {
     background-image: url('../../media/hero-background.webp');
