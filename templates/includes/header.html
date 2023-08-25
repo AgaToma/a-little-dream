@@ -12,7 +12,8 @@
       </a>
     </h4>
   </div>
-  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" data-bs-scroll="true" data-bs-backdrop="false"
+    aria-labelledby="offcanvasTopLabel">
     <div class="offcanvas-header">
       <h5 id="offcanvasTopLabel">Offcanvas top</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -78,9 +79,21 @@
           <li class="nav-item mx-4">
             <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
+          <div class="offcanvas offcanvas-start" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+          </div>
           <li class="nav-item mx-4">
-            <a class="nav-link" href="#">Shop</a>
+            <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Shop</a>
           </li>
+          
+        
+
           <li class="nav-item mx-4">
             <a class="nav-link" href="#">Stories</a>
           </li>

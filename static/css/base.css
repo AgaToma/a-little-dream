@@ -19,7 +19,8 @@ main {
 
 /* Header */
 
-#delivery-banner {
+#delivery-banner,
+.offcanvas {
     background-color: #4d8ebb;
 }
 
