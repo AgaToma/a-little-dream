@@ -20,6 +20,23 @@ main {
 /* Header */
 .logo {
     border-radius: 5px;
+    height:6vh;
+}
+
+.nav-wrapper {
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width:85%;
+}
+
+.logo-icon-wrapper {
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
 }
 
 /* Landing page */
