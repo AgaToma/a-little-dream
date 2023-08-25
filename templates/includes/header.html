@@ -23,7 +23,8 @@
         </a>
         <ul class="mx-auto">
           <li class="list-inline-item">
-            <a class="nav-link" href="#" id="search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link" href="#" id="search" data-bs-toggle="dropdown" title="Search" aria-haspopup="true"
+              aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-search fa-lg"></i></div>
               </div>
@@ -45,8 +46,8 @@
             </div>
           </li>
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link d-block" href="#" id="user-options" data-bs-toggle="dropdown"
-              data-placement="bottom" title="Account" aria-haspopup="true" aria-expanded="false">
+            <a class="text-black nav-link d-block" href="#" id="user-options" data-bs-toggle="dropdown" title="Account"
+              aria-haspopup="true" aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
               </div>
@@ -66,3 +67,11 @@
   {% endwith %}
 </header>
 
+{% block postloadjs %}
+<script type="text/javascript">
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
+{% endblock %}
