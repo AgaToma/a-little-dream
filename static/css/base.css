@@ -18,6 +18,11 @@ main {
 }
 
 /* Header */
+
+#delivery-banner {
+    background-color: #4d8ebb;
+}
+
 .logo {
     border-radius: 5px;
     height:6vh;
