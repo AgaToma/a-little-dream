@@ -61,6 +61,15 @@ hr {
     width:80%;
 }
 
+/* Footer */
+
+footer {
+    background-color: #f9fbfd;
+    bottom: 0;
+    padding-bottom: 0.5px;
+}
+
+
 /* Landing page */
 .hero-background {
     background-image: url('../../media/hero-background.webp');
@@ -143,6 +152,7 @@ hr {
 
   .story-container {
     background-color:rgb(185 217 239);
+    height: 10vh;
   }
 
   @media (max-width: 450px) {
