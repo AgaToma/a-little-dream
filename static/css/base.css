@@ -45,6 +45,16 @@ main {
     width: 70%;
 }
 
+.mega-area {
+    padding: 1rem;
+    margin-top: .5rem;
+    border: 1px solid #4d8ebb;
+}
+
+hr {
+    width:80%;
+}
+
 /* Landing page */
 .hero-background {
     background-image: url('../../media/hero-background.webp');
