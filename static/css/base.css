@@ -14,7 +14,7 @@ body {
 
 main {
     flex: 1 0 auto;
-    margin-top: 10vh;
+    
 }
 
 /* Header */
@@ -45,7 +45,7 @@ main {
     width: 70%;
 }
 
-.mega-area {
+.menu-area {
     padding: 1rem;
     margin-top: .5rem;
     border: 1px solid #4d8ebb;
