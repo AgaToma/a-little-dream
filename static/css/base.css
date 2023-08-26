@@ -179,8 +179,15 @@ a.nav-link,
     height: 10vh;
   }
 
+  .form {
+    box-shadow: 1px -1px 7px 0 #00000061;
+    border-radius: 5px;
+  }
+
   @media (max-width: 450px) {
     .hero-wrap2 {
         display: none;
     }
   }
+
+ 
