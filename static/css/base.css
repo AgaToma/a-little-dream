@@ -193,7 +193,7 @@ a.nav-link,
 
 /* All auth */
 
-  form {
+  .form {
     box-shadow: 1px -1px 7px 0 #00000061;
     border-radius: 5px;
   }

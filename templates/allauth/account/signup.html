@@ -17,7 +17,7 @@
         in</a>.{% endblocktrans %}
     </p>
   </div>
-  <form class="p-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  <form class="form p-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
     {{ form|crispy }}
     {% if redirect_field_value %}
