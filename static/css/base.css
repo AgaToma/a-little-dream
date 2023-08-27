@@ -17,6 +17,11 @@ main {
     
 }
 
+h1, h2, 
+h4 {
+    font-family: 'Permanent Marker', cursive;
+}
+
 /* Header */
 
 #delivery-banner,
@@ -153,6 +158,7 @@ a.nav-link,
     width: 100%;
 }
 
+
 .overlay {
     position: absolute;
     bottom: 0;
@@ -176,7 +182,9 @@ a.nav-link,
     color:white;
     margin: 0;
     padding: 0;
-  }
+
+}
+  
 
   .story-container {
     background-color:rgb(185 217 239);
