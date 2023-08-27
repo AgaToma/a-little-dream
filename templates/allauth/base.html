@@ -1,6 +1,10 @@
-{% extends "base.html" %}
-
-{% load i18n %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+  </head>
 
   <body>
     {% block body %}
@@ -35,3 +39,4 @@
     {% endblock %}
   </body>
 
+  </html>
