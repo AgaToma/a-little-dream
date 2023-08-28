@@ -1,6 +1,8 @@
 from django.db import models
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.crypto import get_random_string
 
 
 class Category(models.Model):
@@ -28,13 +30,20 @@ TARGET_AGE = (
 )
 
 
+def random_sku():
+    """Generates random sku string with store prefix"""
+    prefix = 'ald'
+    random_string = get_random_string(10, allowed_chars='0123456789')
+    random_sku = f'{prefix}{random_string}'
+    return random_sku
+
+
 class Product(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL,
     )
-    sku = models.CharField(
-        max_length=254, null=True, blank=True,
-    )
+    sku = models.CharField(max_length=13, unique=True, default=random_sku, 
+                           editable=True)
     name = models.CharField(max_length=254)
     author = models.CharField(max_length=200)
     highlights = RichTextField(max_length=500, null=False, blank=False)
@@ -50,12 +59,18 @@ class Product(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    target_age = models.CharField(max_length=50, choices=VIEW_TYPES,
+    target_age = models.CharField(max_length=50, choices=TARGET_AGE,
                                   default='all')
     stock_level = models.IntegerField(
         default=1, validators=[MinValueValidator(0), MaxValueValidator(1000)]
     )
     in_stock = models.BooleanField(default=True)
 
+    class Meta:
+        """order by name in admin"""
+        ordering = ("name",)
+
     def __str__(self):
         return self.name
+
+

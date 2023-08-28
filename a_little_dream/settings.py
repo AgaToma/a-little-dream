@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'storages',
     # My Apps
     'home',
+    'products',
 
 ]
 
