@@ -3,6 +3,7 @@ from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.crypto import get_random_string
+from django.contrib.postgres.fields import ArrayField
 
 
 class Category(models.Model):
@@ -33,7 +34,7 @@ TARGET_AGE = (
 def random_sku():
     """Generates random sku string with store prefix"""
     prefix = 'ald'
-    random_string = get_random_string(10, allowed_chars='0123456789')
+    random_string = get_random_string(5, allowed_chars='0123456789')
     random_sku = f'{prefix}{random_string}'
     return random_sku
 
@@ -42,7 +43,7 @@ class Product(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL,
     )
-    sku = models.CharField(max_length=13, unique=True, default=random_sku, 
+    sku = models.CharField(max_length=8, unique=True, default=random_sku, 
                            editable=True)
     name = models.CharField(max_length=254)
     author = models.CharField(max_length=200)
