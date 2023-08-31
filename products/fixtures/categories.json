@@ -1,0 +1,28 @@
+[{
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name": "lights_lamps",
+            "friendly_name": "Lights"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name": "cuddly_toys",
+            "friendly_name": "Cuddlies"
+        }
+
+    },
+
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name": "books",
+            "friendly_name": "Books"
+        }
+
+    },
+]
