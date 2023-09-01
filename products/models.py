@@ -39,6 +39,15 @@ def random_sku():
     return random_sku
 
 
+class TargetAge(models.Model):
+    """Model to be referenced for multiple selection
+    of product target age groups"""
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL,
@@ -60,8 +69,7 @@ class Product(models.Model):
         null=False,
     )
     image_alt = models.CharField(max_length=100, null=False, blank=False)
-    target_age = models.CharField(max_length=50, choices=TARGET_AGE,
-                                  default='all')
+    target_ages = models.ManyToManyField(TargetAge)
     stock_level = models.IntegerField(
         default=1, validators=[MinValueValidator(0), MaxValueValidator(1000)]
     )
