@@ -8,11 +8,11 @@
         "author": "Hans Christian Andersen",
         "highlights": "illustrated bedtime stories, classic stories, developing imagination, reading to sleep",
         "description": "Usborne illustrated collection of all time classics for children by H.C. Andersen.",
-        "price": "24.5",
+        "price": "24.50",
         "image_url": "",
         "image": "",
         "image_alt": "H.C.Andersen book",
-        "target_age": "junior schoolers",
+        "target_age": [3, 4],
         "stock_level": "10",
         "in_stock": "True"
     }
@@ -31,26 +31,83 @@
         "image_url": "",
         "image": "",
         "image_alt": "Belle doll",
-        "target_age": "preschoolers",
+        "target_age": 3,
         "stock_level": "15",
         "in_stock": "True"
     }
 },
 {
     "model": "products.product",
-    "pk": 2,
+    "pk": 3,
     "fiels": {
-        "category": 2,
-        "sku": "ald10002",
-        "name": "Belle Plush Toy",
+        "category": 1,
+        "sku": "ald10003",
+        "name": "Butterfly Lamp",
         "author": "",
-        "highlights": "Belle, Beauty and the Beast, cuddly doll",
-        "description": "Cuddly doll from all time classic Beauty and the Beast as shown in Disney cartoon.",
-        "price": "34.99",
+        "highlights": "colourful lamp, wired lamp, butterfly lamp shade",
+        "description": "Beautiful lamp with colourful butterflies and patterns on the lampshade and pink metal base. Wired with plug.",
+        "price": "50.00",
         "image_url": "",
         "image": "",
-        "image_alt": "Belle doll",
-        "target_age": "preschoolers",
+        "image_alt": "butterfly lamp",
+        "target_age": 1,
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10004",
+        "name": "365 Disney Stories",
+        "author": "Collective work",
+        "highlights": "Disney stories, magical stories, bedtime stories for each day of the year",
+        "description": "Beautifully illustrated book featuring all time favourite Disney illustrations. 365 stories to enjoy bedtime magic each day of the year.",
+        "price": "25.00",
+        "image_url": "",
+        "image": "",
+        "image_alt": "disney storybook",
+        "target_age": [2,3,4],
+        "stock_level": "10",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10005",
+        "name": "Plush elephant",
+        "author": "",
+        "highlights": "cuddly elephant, cute elephant",
+        "description": "Grey, soft elephant teddy. Choose it for a soothing bedtime companion.",
+        "price": "14.99",
+        "image_url": "",
+        "image": "",
+        "image_alt": "elephant teddy",
+        "target_age": [2,3],
+        "stock_level": "10",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10006",
+        "name": "Enchanted Moon",
+        "author": "",
+        "highlights": "magical hanging ball, fairy lights in a ball, moon shape holder",
+        "description": "Magically crafted lamp, featuring metal and string holder, glass ball and fairy lights. Will take older sleepers for a magical bedtime journey.",
+        "price": "45.00",
+        "image_url": "",
+        "image": "",
+        "image_alt": "moon lamp",
+        "target_age": [3, 4],
         "stock_level": "15",
         "in_stock": "True"
     }
