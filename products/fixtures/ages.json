@@ -1,0 +1,40 @@
+[{
+    "model": "products.targetage",
+    "pk": 1,
+    "fields": {
+        "name": "all",
+        "friendly_name":"All"
+    }
+},
+{
+    "model": "products.targetage",
+    "pk": 2,
+    "fields": {
+        "name":"toddlers",
+        "friendly_name": "Toddlers"
+    }
+},
+{
+    "model": "products.targetage",
+    "pk": 3,
+    "fields": {
+        "name":"preschoolers",
+        "friendly_name": "Preschoolers"
+    }
+},
+{
+    "model": "products.targetage",
+    "pk": 4,
+    "fields": {
+        "name": "junior_schoolers",
+        "friendly_name":"Junior Schoolers"
+    }
+},
+{
+    "model": "products.targetage",
+    "pk": 5,
+    "fields": {
+        "name": "pre_teens",
+        "friendly_name":"Pre-teens"
+    }
+}]
