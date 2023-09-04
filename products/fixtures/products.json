@@ -106,7 +106,7 @@
         "price": "45.00",
         "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/enchanted_moon.webp",
         "image": "enchanted_moon.webp",
-        "image_alt": "moon lamp",
+        "image_alt": "moon string lamp",
         "target_age": [3, 4],
         "stock_level": "15",
         "in_stock": "True"
@@ -178,8 +178,8 @@
         "sku": "ald10010",
         "name": "Jellyfish Lamp",
         "author": "",
-        "highlights": "floating jellyfish, colorful lamp ",
-        "description": "This wondeful lamp can pretend to be a little aquarium and will add on a bit of magic to the kids bedroom.",
+        "highlights": "floating jellyfish, colorful lamp",
+        "description": "This wonderful lamp can pretend to be a little aquarium and will add on a bit of magic to the kids bedroom.",
         "price": "22.99",
         "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/jellyfish_lamp.webp",
         "image": "jellyfish_lamp.webp",
@@ -188,4 +188,366 @@
         "stock_level": "8",
         "in_stock": "True"
     }
-},]
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10011",
+        "name": "Lava Lamp",
+        "author": "",
+        "highlights": "colorful lamp, lava lamp, wired",
+        "description": "This wonderful lamp will add unique atmoshpere to the kids bedroom, setting them off for lovely dream adventures.",
+        "price": "22.99",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/lava_lamp.webp",
+        "image": "lava_lamp.webp",
+        "image_alt": "lava lamp",
+        "target_age": [1],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10012",
+        "name": "Plush Moomin",
+        "author": "",
+        "highlights": "moomin teddy, cuddly toy, soft toy",
+        "description": "Let your child drift of to sleep hugging this super soft plush toy. They might dream of great adventures in the Moomin Valley.",
+        "price": "18.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/moomin_plush.webp",
+        "image": "moomin_plush.webp",
+        "image_alt": "moomin toy",
+        "target_age": [1],
+        "stock_level": "12",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10013",
+        "name": "Tales from Moomin Valley",
+        "author": "Tove Jansson",
+        "highlights": "moomin stories, bedtime stories",
+        "description": "All time favourite story about unique moomins and their friends living in their fairy tale world. Perfect as bedtime stories and go well with Moomin Plush toy.",
+        "price": "10.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/moomins_book.webp",
+        "image": "moomins_book.webp",
+        "image_alt": "moomins book",
+        "target_age": [3, 4],
+        "stock_level": "12",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10014",
+        "name": "Moon Lamp",
+        "author": "",
+        "highlights": "moon lamp, star shape light, wired",
+        "description": "Moon shaped lamp with star shaped and round holes to provide magical light display on the walls or ceiling of the kids bedroom.",
+        "price": "15.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/moon_lamp.webp",
+        "image": "moon_lamp.webp",
+        "image_alt": "moon lamp",
+        "target_age": [2, 3],
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10015",
+        "name": "Goodnight Ocean",
+        "author": "Carmen Saldana",
+        "highlights": "little explorers, ocean animals, toddler stories, peep through pages",
+        "description": "This colorful book will help the young sleepers get to sleep and perhaps even dream about colorful fish and other sea creatures.",
+        "price": "9.50",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/ocean_book.webp",
+        "image": "ocean_book.webp",
+        "image_alt": "ocean book",
+        "target_age": [2],
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 16,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10016",
+        "name": "Plush Octopus",
+        "author": "",
+        "highlights": "double sided plush toy, emotions toy, comforting toy",
+        "description": "Happy or sad? Let your child show you at bedtime by using this soft & cuddly octopus. Perfect for cuddling to sleep too.",
+        "price": "6.50",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/octopus_plush.webp",
+        "image": "octopus_plush.webp.webp",
+        "image_alt": "octopus toy",
+        "target_age": [2, 3],
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 17,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10017",
+        "name": "Plush Olaf",
+        "author": "",
+        "highlights": "Olaf from Frozen, cuddly toy",
+        "description": "For all Frozen fans - cuddle up with Olaf while listening to your favourite bedtime stories.",
+        "price": "11.99",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/olaf_plush.webp",
+        "image": "olaf_plush.webp",
+        "image_alt": "olaf toy",
+        "target_age": [2, 3, 4],
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 18,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10018",
+        "name": "Owl Lamp",
+        "author": "",
+        "highlights": "owl shaped lamp, AA batteries",
+        "description": "This super cute owl lamp will add some magic and warmth to the kids bedroom and help set the little ones on their dream journey.",
+        "price": "13.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/owl_lamp.webp",
+        "image": "owl_lamp.webp",
+        "image_alt": "owl lamp",
+        "target_age": [2, 3, 4],
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 19,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10019",
+        "name": "Peter Rabbit - Bedtime Tales",
+        "author": "Beatrix Potter",
+        "highlights": "Peter Rabbit bedtime stories, little readers",
+        "description": "All time classic to help set off the younger sleepers on a wonderful dream journey.",
+        "price": "6.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/peter_book.webp",
+        "image": "peter_book.webp",
+        "image_alt": "peter rabbit book",
+        "target_age": [2, 3],
+        "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 20,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10020",
+        "name": "Peter Rabbit Plush Toy",
+        "author": "",
+        "highlights": "Peter Rabbit teddy",
+        "description": "Hugging this super soft Peter Rabbit teddy while listening to Peter Rabbit beditime stories might be exactly what your child needs to get a wonderful night's sleep.",
+        "price": "10.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/peter_plush.webp",
+        "image": "peter_plush.webp",
+        "image_alt": "peter rabbit teddy toy",
+        "target_age": [2, 3],
+        "stock_level": "10",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 21,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10021",
+        "name": "When Owen's Mom Breathed Fire",
+        "author": "Pija Lindenbaum",
+        "highlights": "mum and son adventures, dragons",
+        "description": "Let this wonderful book take you and your child on a bonding adventure through a crazy day until a well deserved sleep.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/pija_book.webp",
+        "image": "pija_book.webp",
+        "image_alt": "dragon mom book",
+        "target_age": [3, 4],
+        "stock_level": "12",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 22,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10022",
+        "name": "Plush Puffin",
+        "author": "",
+        "highlights": "cuddly puffin toy",
+        "description": "Hugging this super soft puffin toy will help put any little nature lover to sleep.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/puffin_plush.webp",
+        "image": "puffin_plush.webp",
+        "image_alt": "puffin toy",
+        "target_age": [2, 3, 4],
+        "stock_level": "10",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 23,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10023",
+        "name": "Ronja the Robber's Daughter",
+        "author": "Astrid Lindgren",
+        "highlights": "girl and boy friendship, magical adventures, family",
+        "description": "Let your child join Ronja and her friend Birk on their fantastic adventures, which will be a great start to a good night's sleep.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/ronja_book.webp",
+        "image": "ronja_book.webp",
+        "image_alt": "ronja book",
+        "target_age": [4, 5],
+        "stock_level": "12",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 24,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10024",
+        "name": "Salt Lamp",
+        "author": "",
+        "highlights": "salt lamp, colorful lamp, wired",
+        "description": "This beautiful lamp will add a healthy glow to the bedroom and help set off older children on a night full of wonderful dreams.",
+        "price": "20.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/salt_lamp.webp",
+        "image": "salt_lamp.webp",
+        "image_alt": "salt lamp",
+        "target_age": [5],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 25,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10025",
+        "name": "5 Minute Star Wars Stories",
+        "author": "various",
+        "highlights": "Star Wars stories, bedtime short stories",
+        "description": "Perfect for a quick bedtime story to help older children get to sleep.",
+        "price": "16.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/star_wars_book.webp",
+        "image": "star_wars_book.webp",
+        "image_alt": "star wars book",
+        "target_age": [4, 5],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 26,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10026",
+        "name": "Plush Swan",
+        "author": "",
+        "highlights": "swan teddy",
+        "description": "Hugging this super soft puffin toy will help put any little nature lover to sleep. Pefect match for Ugly Duckling bedtime story.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/swan_plush.webp",
+        "image": "swan_plush.webp",
+        "image_alt": "swan plush",
+        "target_age": [2, 3, 4],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 27,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10027",
+        "name": "Plush Tigger",
+        "author": "",
+        "highlights": "tigger teddy, winnie the pooh",
+        "description": "There's no companion like Tigger. Let your child cuddle up with this soft toy for a good night's sleep.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/tigger_plush.webp",
+        "image": "tigger_plush.webp",
+        "image_alt": "tigger plush",
+        "target_age": [2, 3, 4],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 28,
+    "fiels": {
+        "category": 2,
+        "sku": "ald10028",
+        "name": "Plush Toothless",
+        "author": "",
+        "highlights": "toothless teddy, how to train your dragon",
+        "description": "Pefrect cuddly companion, who will help fall a sleep all dragon fan and little dreamers.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/toothless_plush.webp",
+        "image": "toothless_plush.webp",
+        "image_alt": "toothless plush",
+        "target_age": [2, 3, 4],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 29,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10029",
+        "name": "Winnie the Pooh. The complete collection.",
+        "author": "A.A.Milne",
+        "highlights": "winnie the booh books set",
+        "description": "All time favourite classic. Let the stories about Winnie and his lovely friends accompany your child on their dream journey.",
+        "price": "28.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/winnie_book.webp",
+        "image": "winnie_book.webp",
+        "image_alt": "winnie the pooh books set",
+        "target_age": [2, 3, 4],
+        "stock_level": "8",
+        "in_stock": "True"
+    }
+},
+]
