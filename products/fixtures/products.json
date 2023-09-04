@@ -9,8 +9,8 @@
         "highlights": "illustrated bedtime stories, classic stories, developing imagination, reading to sleep",
         "description": "Usborne illustrated collection of all time classics for children by H.C. Andersen.",
         "price": "24.50",
-        "image_url": "",
-        "image": "",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/andersen_book.webp",
+        "image": "andersen_book.webp",
         "image_alt": "H.C.Andersen book",
         "target_age": [3, 4],
         "stock_level": "10",
@@ -28,10 +28,10 @@
         "highlights": "Belle, Beauty and the Beast, cuddly doll",
         "description": "Cuddly doll from all time classic Beauty and the Beast as shown in Disney cartoon.",
         "price": "34.99",
-        "image_url": "",
-        "image": "",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/belle_plush.webp",
+        "image": "belle_plush.webp",
         "image_alt": "Belle doll",
-        "target_age": 3,
+        "target_age": [3],
         "stock_level": "15",
         "in_stock": "True"
     }
@@ -47,10 +47,10 @@
         "highlights": "colourful lamp, wired lamp, butterfly lamp shade",
         "description": "Beautiful lamp with colourful butterflies and patterns on the lampshade and pink metal base. Wired with plug.",
         "price": "50.00",
-        "image_url": "",
-        "image": "",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/butterfly_lamp.webp",
+        "image": "butterfly_lamp.webp",
         "image_alt": "butterfly lamp",
-        "target_age": 1,
+        "target_age": [1],
         "stock_level": "15",
         "in_stock": "True"
     }
@@ -66,10 +66,10 @@
         "highlights": "Disney stories, magical stories, bedtime stories for each day of the year",
         "description": "Beautifully illustrated book featuring all time favourite Disney illustrations. 365 stories to enjoy bedtime magic each day of the year.",
         "price": "25.00",
-        "image_url": "",
-        "image": "",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/disney_stories.webp",
+        "image": "disney_stories.webp",
         "image_alt": "disney storybook",
-        "target_age": [2,3,4],
+        "target_age": [2, 3, 4],
         "stock_level": "10",
         "in_stock": "True"
     }
@@ -85,10 +85,10 @@
         "highlights": "cuddly elephant, cute elephant",
         "description": "Grey, soft elephant teddy. Choose it for a soothing bedtime companion.",
         "price": "14.99",
-        "image_url": "",
-        "image": "",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/elephant_plush.webp",
+        "image": "elephant_plush.webp",
         "image_alt": "elephant teddy",
-        "target_age": [2,3],
+        "target_age": [2, 3],
         "stock_level": "10",
         "in_stock": "True"
     }
@@ -104,11 +104,88 @@
         "highlights": "magical hanging ball, fairy lights in a ball, moon shape holder",
         "description": "Magically crafted lamp, featuring metal and string holder, glass ball and fairy lights. Will take older sleepers for a magical bedtime journey.",
         "price": "45.00",
-        "image_url": "",
-        "image": "",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/enchanted_moon.webp",
+        "image": "enchanted_moon.webp",
         "image_alt": "moon lamp",
         "target_age": [3, 4],
         "stock_level": "15",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10007",
+        "name": "Fairy Stars",
+        "author": "",
+        "highlights": "magical string lights, star lights, lights in a vase, branches and lights decoration",
+        "description": "Magical lit up decoration with star string lights. Will help transport young sleepers into world of wonderful dreams.",
+        "price": "35.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/fairy_stars.webp",
+        "image": "fairy_stars.webp",
+        "image_alt": "star string lights",
+        "target_age": [4, 5],
+        "stock_level": "18",
+        "in_stock": "True"
+    }
+},
+
+{
+    "model": "products.product",
+    "pk": 8,
+    "fiels": {
+        "category": 3,
+        "sku": "ald10008",
+        "name": "The Day I Fell Into a Fairytale",
+        "author": "Ben Miller",
+        "highlights": "classic fairytales with a modern twist, children's adventures, bedtime story",
+        "description": "A magical adventure from bestselling author Ben Miller. Embarking on a journey to the fairytale with Lena and Harrison will ensure a good night's sleep.",
+        "price": "12.00",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/fairytale_book.webp",
+        "image": "fairytale_book.webp",
+        "image_alt": "ben miller book",
+        "target_age": [3, 4, 5],
+        "stock_level": "10",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10009",
+        "name": "Lights in a Jar",
+        "author": "",
+        "highlights": "string lights in a jar",
+        "description": "This simple, yet beautiful jar filled with lights will add a warm and magical glow to any room, where kids are waiting to fall asleep.",
+        "price": "8.50",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/jar_lamp.webp",
+        "image": "jar_lamp.webp",
+        "image_alt": "jar lamp",
+        "target_age": [4, 5],
+        "stock_level": "20",
+        "in_stock": "True"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fiels": {
+        "category": 1,
+        "sku": "ald10010",
+        "name": "Jellyfish Lamp",
+        "author": "",
+        "highlights": "floating jellyfish, colorful lamp ",
+        "description": "This wondeful lamp can pretend to be a little aquarium and will add on a bit of magic to the kids bedroom.",
+        "price": "22.99",
+        "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/jellyfish_lamp.webp",
+        "image": "jellyfish_lamp.webp",
+        "image_alt": "jellyfish lamp",
+        "target_age": [1],
+        "stock_level": "8",
         "in_stock": "True"
     }
 },]
