@@ -7,8 +7,8 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
         'name',
         'category',
+        'target_ages',
         'price',
-        'rating',
         'image',
     )
 
@@ -16,6 +16,13 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
+
+class TargetAgeAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
