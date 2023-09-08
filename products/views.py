@@ -60,7 +60,7 @@ def all_products(request):
     selected_category = request.GET.get("category")
 
     context = {
-        'products': products,
+        'products': paginated_products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
