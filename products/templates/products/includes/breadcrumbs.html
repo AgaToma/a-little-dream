@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-12">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb px-0 mb-0">
+                {% if search_query%}
+                <li class="breadcrumb-item" aria-current="page">Search Results for <strong><i>
+                            {{ search_query }}</i></strong></li>
+                {% endif %}
+                {% if not search_query%}
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="{% url 'products' %}">All Products</a></li>
+                {% endif %}
+                {% if selected_category %}
+                {% for c in current_categories %}
+                <li class="breadcrumb-item active" aria-current="page">
+                    <a href="{% url 'products' %}?category={{ c.name }}">{{ c.friendly_name }}</a>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ol>
+        </nav>
+    </div>
+</div>
+{% block postloadjs %}
+<script>
+    $breadcrumb-divider: quote(">");
+</script>
+{% endblock %}
