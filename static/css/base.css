@@ -205,7 +205,7 @@ a.nav-link,
   .star {
     display: flex;
     flex-direction: row;
-    width:80%;
+    width:82%;
 }
 
   .star:before, .star:after {
@@ -242,6 +242,16 @@ a.nav-link,
 #sort-selector{
     width:100%;
     background-color: #e0eefd;
+}
+
+#btn-back-to-top {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
 }
 
 

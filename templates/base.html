@@ -83,10 +83,18 @@
 
     <main>{% block content %} {% endblock %}</main>
 
+    <!-- Back to top button -->
+    <div id="btn-back-to-top" class="shadow-sm rounded-0 border border-black">
+        <a class="d-flex h-100">
+            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+        </a>
+    </div>
+
     <!-- Footer -->
     {% include 'includes/footer.html' %}
 
     {% block postloadjs %}
+    <script src="{% static 'js/button.js' %}"></script>
     <!-- Toasts script-->
     <script>
         var toastElList = [].slice.call(document.querySelectorAll('.toast'))
@@ -96,6 +104,8 @@
         toastList.forEach(toast => toast.show())
     </script>
     {% endblock %}
+
+
 
     <!-- Mailchimp scripts -->
     {% block mailchimpjs %}
