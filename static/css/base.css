@@ -234,6 +234,16 @@ a.nav-link,
     right: 36px;
 }
 
+/* Products */
+.light-grey {
+    background-color: #f9fbfd;
+}
+
+#sort-selector{
+    width:100%;
+    background-color: #e0eefd;
+}
+
 
   @media (max-width: 450px) {
     .hero-wrap2 {
