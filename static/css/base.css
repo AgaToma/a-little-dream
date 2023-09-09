@@ -229,6 +229,10 @@ a.nav-link,
     background-color: #f9fbfd;
 }
 
+.light-blue {
+    background-color: #e0eefd;
+}
+
 #sort-selector{
     width:100%;
     background-color: #e0eefd;

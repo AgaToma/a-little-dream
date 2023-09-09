@@ -6,16 +6,16 @@
     <i class="fa-regular fa-star"></i>
 </div>
 <div class="container-fluid">
-    <!-- Product Breadcrumbs -->
+    <!-- Product Specific Breadcrumbs -->
     <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb  px-0 mb-0">
                     <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
                     <li class="breadcrumb-item"><a href="{% url 'products' %}">All Products</a></li>
                     <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}">
                             {{ product.category.friendly_name }}</a></li>
-                    <li class="breadcrumb-item active current-item-crumb" aria-current="page">{{ product.name}}</li>
+                    <li class="breadcrumb-item active current-item-crumb" aria-current="page"><strong>{{ product.name }}</strong></li>
                 </ol>
             </nav>
         </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <p class="mb-0">{{ product.name }}</p>
+                <h3 class="mb-0 light-blue">{{ product.name }}</h3>
                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
@@ -47,6 +47,7 @@
                 </p>
                 {% endif %}
                 <!-- Stock information -->
+                <div class="col-12 col-md-6">
                 {% if product.in_stock %}
                 <p class="pl-2">
                     <i class="fa-regular fa-square-check text-success"></i>
@@ -61,6 +62,7 @@
                 <p class="pl-2"><i class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
                     Stock</p>
                 {% endif %}
+                </div>
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
@@ -72,26 +74,10 @@
                     <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                 </small>
                 {% endif %}
-                <div class="col-12 col-md-6">
-
-                </div>
+                <!-- Description -->
                 <p class="mt-3">{{ product.description }}</p>
-                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                <form class="form" action="#" method="POST">
                     {% csrf_token %}
-                    <div class="form-row">
-                        {% with product.has_sizes as s %}
-                        {% if s %}
-                        <div class="col-12">
-                            <p><strong>Size:</strong></p>
-                            <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                <option value="xs">XS</option>
-                                <option value="s">S</option>
-                                <option value="m" selected>M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
-                            </select>
-                        </div>
-                        {% endif %}
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
@@ -128,7 +114,6 @@
                             <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        {% endwith %}
                     </div>
                 </form>
             </div>
@@ -139,5 +124,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+<script>
+    $breadcrumb-divider: quote(">");
+</script>
 {% endblock %}
