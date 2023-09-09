@@ -121,6 +121,10 @@
                 <a href="{% url 'products' %}?category=lights_lamps" class="dropdown-item">Lights</a>
                 <a href="{% url 'products' %}?category=cuddly_toys" class="dropdown-item">Cuddlies</a>
                 <a href="{% url 'products' %}?category=books" class="dropdown-item">Books</a>
+                {% if user.is_superuser %}
+                <hr class="mx-auto">
+                <a href="{% url 'add_product' %}" class="dropdown-item"><strong>Add Product</strong></a>
+                {% endif %}
               </div>
             </div>
           </div>
