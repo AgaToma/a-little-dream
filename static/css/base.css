@@ -248,9 +248,10 @@ a.nav-link,
     height: 42px;
     width: 42px;
     position: fixed;
-    bottom: 10px;
-    right: 20px;
+    bottom: 20px;
+    right: 40px;
     cursor: pointer;
+    z-index:99;
 
 }
 
