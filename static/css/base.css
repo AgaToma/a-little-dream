@@ -255,6 +255,11 @@ a.nav-link,
 
 }
 
+#topBtn:hover {
+    background-color: rgba(86, 185, 235, 0.5);
+}
+
+
 
   @media (max-width: 450px) {
     .hero-wrap2 {
