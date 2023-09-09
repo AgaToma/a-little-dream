@@ -113,31 +113,21 @@ a.nav-link,
     margin-bottom: 2%;
 }
 
-.hero-wrap1,
-.hero-wrap2 {
+.hero-wrap {
     width: 50%;
     height:100%;
 }
 
-.hero-wrap2 {
-    display:flex;
-    justify-content: center;
-}
 
-.hero-wrap1 h1 {
+.hero-wrap h1 {
     color:rgb(239, 247, 247);
     margin: 6%;
     font-family: 'Caveat', cursive;
     font-size: 4rem;
 }
 
-.hero-front2 {
-    width:80%;
-    border-radius: 5px;
-    margin-left:10%;
-}
-
 .hero-front {
+    width:80%;
     border-radius: 5px;
 }
 
