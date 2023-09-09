@@ -49,7 +49,7 @@ def all_products(request):
                 | Q(name__icontains=query)
                 | Q(highlights__icontains=query)
                 | Q(category__name__icontains=query)
-                | Q(sub_category__name__icontains=query)
+                | Q(target_ages__name__icontains=query)
             )
             products = products.filter(queries)
 
