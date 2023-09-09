@@ -251,9 +251,9 @@ a.nav-link,
 
 
 
-  @media (max-width: 450px) {
-    .hero-wrap2 {
-        display: none;
+  @media (max-width: 1000px) {
+    .hero-wrap {
+        width:100%;
     }
   }
 
