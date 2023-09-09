@@ -244,14 +244,14 @@ a.nav-link,
     background-color: #e0eefd;
 }
 
-#btn-back-to-top {
+#topBtn {
     height: 42px;
     width: 42px;
     position: fixed;
     bottom: 10px;
     right: 20px;
     cursor: pointer;
-    display: none;
+
 }
 
 
