@@ -160,4 +160,4 @@ def delete_product(request, product_id):
         return HttpResponseRedirect(reverse('products'))
 
     return render(request, 'products/delete_product.html', context)
-    # return redirect(reverse('products'))
+ 
