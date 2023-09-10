@@ -1,4 +1,9 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (
+    render, 
+    redirect, 
+    reverse, 
+    get_object_or_404, 
+    HttpResponseRedirect)
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -146,7 +151,13 @@ def delete_product(request, product_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
+    context = {}
     product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
+
+    if request.method == "POST":
+        product.delete()
+        messages.success(request, 'Product deleted!')
+        return HttpResponseRedirect(reverse('products'))
+
+    return render(request, 'products/delete_product.html', context)
+    # return redirect(reverse('products'))
