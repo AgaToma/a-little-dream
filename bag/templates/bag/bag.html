@@ -107,14 +107,7 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    {% include 'products/includes/quantity_input_script.html' %}
-
-    <!-- Back to top button -->
-    <script>
-        $('.back-to-top').click(function(e) {
-            window.scrollTo(0,0)
-        })
-    </script>
+    {% include 'products/includes/quantity_script.html' %}
 
     <script>
         // Update quantity on click
