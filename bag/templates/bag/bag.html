@@ -21,8 +21,8 @@
                                 {% include "bag/product_info.html" %}
                             </div>
                             <div class="col-12 col-sm-6 order-sm-last">
-                                <p class="my-0">Price: £{{ item.product.price }}</p>
-                                <p><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                <p class="my-0">Price: €{{ item.product.price }}</p>
+                                <p><strong>Subtotal: </strong>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </div>
                             <div class="col-12 col-sm-6">
                                 {% include "bag/quantity_form.html" %}
@@ -74,7 +74,7 @@
                                     {% include "bag/quantity_form.html" %}
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p> 
+                                    <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p> 
                                 </td>
                             </tr>
                         {% endfor %}
