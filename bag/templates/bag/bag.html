@@ -12,63 +12,64 @@
         <h2 class="text-center">Your Bag</h2>
     </div>
 </div>
+<div class="container col-12 offset-1">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-8 rounded mb-3 mb-md-5">
+            {% if bag_items %}
+            <div>
+                {% for item in bag_items %}
+                <div class="row">
+                    <div class="col-4 mb-2">
+                        {% include "bag/product_image.html" %}
+                    </div>
+                    <div class="col-8 col-sm-6 mb-2">
+                        {% include "bag/product_info.html" %}
+                        <div class="col-4 order-sm-last">
+                            <p class="my-0">Price: €{{ item.product.price }}</p>
+                            <p><strong>Subtotal: </strong>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </div>
+                        <div class="col-4">
+                            {% include "bag/quantity_form.html" %}
+                        </div>
+                    </div>
 
-<div class="row">
-    <div class="col-lg-8">
-        {% if bag_items %}
-        <div>
-            {% for item in bag_items %}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 p-0 pl-md-3 mb-5 border">
             <div class="row">
-                <div class="col-4 mb-2">
-                    {% include "bag/product_image.html" %}
+                <div class="col">
+                    {% include "bag/bag_total.html" %}
                 </div>
-                <div class="col-8 col-sm-6 mb-2">
-                    {% include "bag/product_info.html" %}
-                    <div class="col-4 order-sm-last">
-                        <p class="my-0">Price: €{{ item.product.price }}</p>
-                        <p><strong>Subtotal: </strong>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                    </div>
-                    <div class="col-4">
-                        {% include "bag/quantity_form.html" %}
-                    </div>
-                </div>
-                
             </div>
             <div class="row">
                 <div class="col">
-                    <hr>
+                    {% include "bag/checkout_buttons.html" %}
                 </div>
             </div>
-            {% endfor %}
-
         </div>
 
+        <!-- Empty Bag -->
+        {% else %}
+        <p class="lead mb-5">Your bag is empty.</p>
+        <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span class="text-uppercase">Keep Shopping</span>
+        </a>
+        {% endif %}
     </div>
-    <div class="col-lg-4">
-        <div class="row">
-            <div class="col">
-                {% include "bag/bag_total.html" %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                {% include "bag/checkout_buttons.html" %}
-            </div>
-        </div>
-    </div>
+</div>
 
-    <!-- Empty Bag -->
-    {% else %}
-    <p class="lead mb-5">Your bag is empty.</p>
-    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-        <span class="icon">
-            <i class="fas fa-chevron-left"></i>
-        </span>
-        <span class="text-uppercase">Keep Shopping</span>
-    </a>
-    {% endif %}
-</div>
-</div>
 {% endblock %}
 
 {% block postloadjs %}
