@@ -10,7 +10,7 @@
                 </button>
             </div>
             <!-- quantity value -->
-            <input class="text-center form-control form-control-sm qty_input id_qty_{{ item.item_id }}" type="number" aria-label="Quantity" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"> 
+            <input class="text-center form-control form-control-sm qty_input id_qty_{{ item.item_id }}" type="number" aria-label="Quantity" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.stock_level }}" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}"> 
             <!-- plus button -->
             <div class="input-group-append">
                 <button class="increment-qty btn btn btn-dark rounded-0 increment-qty_{{ item.item_id }}" 
