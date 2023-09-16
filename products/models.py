@@ -21,16 +21,6 @@ class Category(models.Model):
         return self.friendly_name
 
 
-# Choice Fields
-TARGET_AGE = (
-    ('all', 'All'),
-    ('toddlers', 'Toddlers'),
-    ('preschoolers', 'Preschoolers'),
-    ('junior schoolers', 'Junior Schoolers'),
-    ('pre-teens', 'Pre-teens'),
-)
-
-
 def random_sku():
     """Generates random sku string with store prefix"""
     prefix = 'ald'
