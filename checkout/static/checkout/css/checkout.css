@@ -72,3 +72,7 @@ selection option[value=""] {
     font-size: 10rem;
     color: var(--dark-blue);
 }
+
+.edit-link:hover {
+    text-decoration: underline;
+}
