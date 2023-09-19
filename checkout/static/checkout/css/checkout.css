@@ -13,7 +13,7 @@
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+  box-shadow: 0 1px 3px 0 #cfd7df!important;
 }
 
 .StripeElement--webkit-autofill {
@@ -21,7 +21,7 @@
 }
 
 .stripe-style-input::placeholder {
-    color: #aab7c4;
+    color: black;
 }
 
 .fieldset-label {
@@ -36,9 +36,24 @@
     border-bottom: 2px solid #000;
 }
 
+#payment-form .form-control:focus,
+#payment-form .form-control:active {
+    border-bottom: 2px solid #41bcf5;
+}
+
+
+#card-element:focus,
+#card-element:active {
+    border-bottom: 2px solid #41bcf5;
+}
+
 .form-select {
     border-bottom: 2px solid #000;
     height: 45px;
+}
+
+.form-select::placeholder {
+    color: black!important;
 }
 
 select,
@@ -46,7 +61,6 @@ select option {
     color: #000000;
 }
 
-select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
