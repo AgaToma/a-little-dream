@@ -262,6 +262,11 @@ a.nav-link,
     background-color: rgba(86, 185, 235, 0.5);
 }
 
+.img-dims {
+    height: 20rem;
+    width: auto;
+}
+
 
 
   @media (max-width: 1000px) {
