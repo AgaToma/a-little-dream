@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+
 {% block title %}Profile{% endblock %}
 
 {% block content %}
@@ -17,10 +22,13 @@
         <!--Delivery Address-->
         <div class="col-12 col-lg-6 pt-3 pb-4 mt-4 card border-dark card-shadow">
             <h4 class="text-center">Delivery Address</h4>
+            <hr class="mx-auto">
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                <div class="mx-auto text-center mt-5 mb-2">
+                    <button class="btn btn-info text-uppercase">Update Information</button>
+                </div>
             </form>
         </div>
         <!--Order history-->
@@ -49,9 +57,7 @@
                                 <ul class="list-unstyled">
                                     {% for item in order.lineitems.all %}
                                     <li class="small">
-                                        {% if item.product.has_sizes %}
-                                        Size {{ item.product.size|upper }}
-                                        {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                        {{ item.product.name }} x{{ item.quantity }}
                                     </li>
                                     {% endfor %}
                                 </ul>
@@ -69,5 +75,4 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
