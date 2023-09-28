@@ -295,7 +295,7 @@
         "description": "Happy or sad? Let your child show you at bedtime by using this soft & cuddly octopus. Perfect for cuddling to sleep too.",
         "price": "6.50",
         "image_url": "https://a-little-dream.s3.eu-west-1.amazonaws.com/media/octopus_plush.webp",
-        "image": "octopus_plush.webp.webp",
+        "image": "octopus_plush.webp",
         "image_alt": "octopus toy",
         "target_ages": [2, 3],
         "stock_level": "15",

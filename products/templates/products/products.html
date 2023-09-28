@@ -99,7 +99,7 @@
                                         {% if product.stock_level == 0 %}
                                         <span class="text-danger">Out of Stock</span>
                                         {% else %}
-                                        <span data-stock="{{ product.stock }}">{{ product.stock }}</span>
+                                        <span data-stock="{{ product.stock }}">{{ product.stock_level }}</span>
                                         {% endif %}
                                     </span>
                                     <!-- Admin edit and delete buttons -->

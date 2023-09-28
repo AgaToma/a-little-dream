@@ -88,7 +88,7 @@ def product_detail(request, product_id):
     rating_avg = reviews.aggregate(Avg('rating'))
 
     if user.is_authenticated:
-        user_review = Review.objects.filter(user=user, product=product)
+        user_review = Review.objects.filter(author=user, product=product)
     else:
         user_review = None
 
