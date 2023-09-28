@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Edit Review for {{ product.name }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="star mx-auto">
+    <i class="fa-regular fa-star"></i>
+</div>
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        <h3 class="text-center">Edit Review</h3>
+        <!--Form to edit review-->
+        <p>Review of {{ product.name }} by {{ review.author }}</p>
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <div class="text-center">
+            <a class="btn cta" href="{% url 'product_detail' product.id %}">Cancel</a>
+            <button class="btn btn-info" type="submit">Update</button>
+        </div>
+    </form>
+</div>  
+{% endblock %}
