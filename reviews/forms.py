@@ -5,22 +5,26 @@ from .models import Review
 
 class ReviewForm(forms.ModelForm):
     """
-    Form to create a product review
+    Product Review form
     """
-    model = Review
-    fields = [
-        'rating',
-        'content',
-    ]
 
-    content = forms.CharField(widget=RichTextWidget())
+    class Meta:
 
-    labels = {
-        'rating': 'Rating (1-5)',
-        'content': 'Content',
-    }
+        model = Review
+        fields = [
+            'content',
+            'rating',
+        ]
+
+        content = forms.CharField(widget=RichTextWidget())
+
+        labels = {
+            'content': 'Content',
+            'rating': 'Rating (1-5)',
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['rating'].widget.attrs['min'] = 1
         self.fields['rating'].widget.attrs['max'] = 5
+        
