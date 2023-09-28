@@ -6,8 +6,8 @@
     <p>{{ review.content|safe }}</p>
 </div>
 {% if user == review.author or user.is_superuser %}
-<div class="my-2">
-    <a href="{% url 'edit_review' product.id review.id %}" class="btn">Manage
+<div class="mt-2">
+    <a href="{% url 'edit_review' product.id review.id %}" class="btn btn-outline-secondary">Manage
         Review
         <i class="fa-solid fa-sm fa-pencil"></i></a>
 </div>
