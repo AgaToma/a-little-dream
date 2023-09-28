@@ -32,11 +32,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 development = os.environ.get('DEVELOPMENT', False)
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = development
+DEBUG = development
 
-DEBUG = True
-
-ALLOWED_HOSTS = ['8000-agatoma-alittledream-crnpu8de9mg.ws-eu104.gitpod.io',
+ALLOWED_HOSTS = ['8000-agatoma-alittledream-crnpu8de9mg.ws-eu105.gitpod.io',
                  'a-little-dream-23a29b7469db.herokuapp.com', 'localhost',]
 
 
@@ -139,16 +137,17 @@ WSGI_APPLICATION = 'a_little_dream.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if development:
+
+if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
     }
 
 
