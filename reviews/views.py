@@ -13,22 +13,24 @@ def add_review(request, product_id):
     """
     user = request.user
     product = get_object_or_404(Product, pk=product_id)
+    form_class = ReviewForm
+
     if request.method == 'POST':
         form = ReviewForm(request.POST, request.FILES)
         if form.is_valid():
-            review = form.save(commit=False)
+            # review = form.save(commit=False)
             review.product = product
             review.author = user
             review = form.save()
             messages.success(request, 'Your review was added successfully.')
-            return redirect(reverse('product_detail', args=[product.pk]))
+            return redirect(reverse('product_detail', args=[product_id]))
         else:
             messages.error(
                 request,
                 'Unable to add the review. Please check the form and resubmit')
     else:
         form = ReviewForm()
-    
+   
     template = reviews/review.html
     context = {
         'form': form,
@@ -41,7 +43,7 @@ def add_review(request, product_id):
 @login_required()
 def edit_review(request, product_id, review_id):
     """
-    Allows logged in authors to edit their own reviews 
+    Allows logged in authors to edit their own reviews
     """
     user = request.user
     product = get_object_or_404(Product, pk=product_id)
@@ -59,7 +61,7 @@ def edit_review(request, product_id, review_id):
             else:
                 messages.error(
                     request,
-                    'Not able to update review. Please check the form for errors.'
+                    'Not able to update review. Please check the form.'
                 )
         else:
             form = ReviewForm(instance=review)

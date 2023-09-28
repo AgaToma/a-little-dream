@@ -8,12 +8,12 @@ urlpatterns = [
         name="add_review",
     ),
     path(
-        "edit_review/<slug:slug>/<int:review_id>/",
+        "edit_review/<int:product_id>/<int:review_id>/",
         views.edit_review,
         name="edit_review",
     ),
     path(
-        "delete_review/<slug:slug>/<int:review_id>/",
+        "delete_review/<int:product_id>/<int:review_id>/",
         views.delete_review,
         name="delete_review",
     ),
