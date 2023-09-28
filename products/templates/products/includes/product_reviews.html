@@ -1,12 +1,13 @@
 {% if reviews %}
 {% for review in reviews %}
 
-<h3>Added by {{ review.author }}</h3>
-<div>
-    <p>{{ review.review|safe }}</p>
+<p class="light-blue fw-bold">Added by <strong>{{ review.author }}</strong></p>
+<div class="fst-italic">
+    <p>{{ review.content|safe }}</p>
 </div>
 
-<hr>
+<hr class="w-100">
+
 {% endfor %}
 {% else %}
 <div class="col-12 text-center">

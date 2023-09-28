@@ -243,7 +243,7 @@ a.nav-link,
 }
 
 .light-blue {
-    background-color: #e0eefd;
+    background-color: #d7f1fc;;
 }
 
 #sort-selector{
@@ -285,6 +285,17 @@ a.nav-link,
     border-left: none;
     border-right: none;
     border-bottom: solid 2px black;
+}
+
+.accordion-button:not(.collapsed){
+    color: black;
+    background-color: rgb(215, 217, 218);
+    border-bottom: solid 2px black;
+    box-shadow: 1px -1px 7px 0 #00000061;
+}
+
+.accordion-button:focus {
+    box-shadow: 1px -1px 7px 0 #00000061;
 }
 
   @media (max-width: 1000px) {
