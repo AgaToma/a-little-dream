@@ -72,8 +72,8 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
-        "selected_category": selected_category,
-        "total_products": total_products,
+        'selected_category': selected_category,
+        'total_products': total_products,
     }
 
     return render(request, 'products/products.html', context)
