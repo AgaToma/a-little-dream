@@ -276,7 +276,16 @@ a.nav-link,
     width: auto;
 }
 
+.accordion-flush .accordion-item:last-child {
+    border-bottom: solid 2px black;
+}
 
+.shop-btn {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px black;
+}
 
   @media (max-width: 1000px) {
     .hero-wrap {
