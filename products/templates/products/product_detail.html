@@ -29,7 +29,8 @@
             <div class="image-container my-5">
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid img-dims2" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img class="card-img-top img-fluid img-dims2" src="{{ product.image.url }}"
+                        alt="{{ product.name }}">
                 </a>
                 {% else %}
                 <a href="">
@@ -40,14 +41,15 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
-                <h2 class="mb-0 light-blue card-shadow">{{ product.name }}</h2>
+                <h2 class="mb-0 px-2 light-blue card-shadow">{{ product.name }}</h2>
                 {% if product.author %}
                 <p><strong>Author:</strong> {{ product.author }} </p>
                 {% endif %}
                 <p class="lead mb-0 text-left"><strong>€{{ product.price }}</strong></p>
                 {% if product.category %}
                 <p class="small mt-1 mb-0">
-                    <a class="text-muted text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
+                    <a class="text-muted text-decoration-none"
+                        href="{% url 'products' %}?category={{ product.category.name }}">
                         <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
                     </a>
                 </p>
@@ -77,16 +79,12 @@
                         {% endfor %}
                     </p>
                 </div>
-                {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                <!-- Rating -->
+                {% if rating_avg %}
+                <small class="text-muted"><i class="fas fa-star mr-1"></i> {{ rating_avg.rating__avg|floatformat:"-1" }}
+                    / 5</small>
                 {% else %}
                 <small class="text-muted">No Rating</small>
-                {% endif %}
-                {% if request.user.is_superuser %}
-                <small class="ml-3">
-                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                </small>
                 {% endif %}
                 <!-- Description -->
                 <div>
@@ -115,8 +113,8 @@
                                         </button>
                                     </div>
                                     <!-- quantity value -->
-                                    <input class="text-center form-control qty_input id_qty_{{ product.id }}" type="number"
-                                        name="quantity" value="1" min="1" max="{{ product.stock_level }}"
+                                    <input class="text-center form-control qty_input id_qty_{{ product.id }}"
+                                        type="number" name="quantity" value="1" min="1" max="{{ product.stock_level }}"
                                         data-item_id="{{ product.id }}" aria-label="Quantity">
                                     <!-- plus button -->
                                     <div class="input-group-append">
@@ -129,20 +127,35 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Update product for admins -->
+                            {% if request.user.is_superuser %}
+                            <div class="mt-2">
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_product' product.id %}">Edit Product</a> |
+                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete
+                                        Product</a>
+                                </small>
+                            </div>
+                            {% endif %}
+                            <!-- Reviews -->
                             <div class="accordion accordion-flush mt-4" id="reviewAccordion">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                      Reviews
-                                    </button>
-                                  </h2>
-                                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#reviewAccordion">
-                                    <div class="accordion-body">
-                                      {% include './includes/product_reviews.html' %}
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false" aria-controls="flush-collapseOne">
+                                            Reviews
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#reviewAccordion">
+                                        <div class="accordion-body">
+                                            {% include './includes/product_reviews.html' %}
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
                             </div>
+                            <!-- Back to shop btn -->
                             <div>
                                 <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 mt-3 shop-btn">
                                     <span class="mr-2"><i class="fa-solid fa-chevron-left"></i></span>
