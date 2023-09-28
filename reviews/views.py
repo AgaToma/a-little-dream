@@ -80,13 +80,13 @@ def edit_review(request, product_id, review_id):
 @login_required
 def delete_review(request, product_id, review_id):
     """
-    Let's author or admin delete the review
-    """ 
+    Lets author or admin delete the review
+    """
     user = request.user
     product = get_object_or_404(Product, pk=product_id)
     review = get_object_or_404(Review, pk=review_id)
 
-    if not (user == review.user or user.is_superuser):
+    if not (user == review.author or user.is_superuser):
         messages.error(
             request,
             f'Only the site owner or the review author can delete it.',

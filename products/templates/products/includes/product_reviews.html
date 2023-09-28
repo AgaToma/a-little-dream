@@ -3,7 +3,9 @@
 
 <p class="light-blue fw-bold">Added by <strong>{{ review.author }}</strong></p>
 <div class="fst-italic">
+    <p><i class="fas fa-star mr-1 text-warning"></i> {{ review.rating }}</p>
     <p>{{ review.content|safe }}</p>
+    <p class="small text-muted">{{ review.created_on }}</p>
 </div>
 {% if user == review.author or user.is_superuser %}
 <div class="mt-2">
