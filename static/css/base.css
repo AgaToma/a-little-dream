@@ -271,6 +271,11 @@ a.nav-link,
     width: auto;
 }
 
+.img-dims2 {
+    height: 30rem;
+    width: auto;
+}
+
 
 
   @media (max-width: 1000px) {
