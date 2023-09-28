@@ -12,13 +12,15 @@ from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
+from reviews.models import Review
 
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
-    total_products = Product.objects.count() 
+    user = request.user
+    total_products = Product.objects.count()
     query = None
     categories = None
     sort = None
@@ -81,9 +83,20 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    user = request.user
+    reviews = Review.objects.filter(product=product)
+    rating_avg = reviews.aggregate(Avg('rating'))
+
+    if user.is_authenticated:
+        user_review = Review.objects.filter(user=user, product=product)
+    else:
+        user_review = None
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'user_review': user_review,
+        'rating_avg': rating_avg,
     }
 
     return render(request, 'products/product_detail.html', context)
