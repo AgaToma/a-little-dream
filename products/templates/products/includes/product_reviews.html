@@ -1,0 +1,19 @@
+{% if reviews %}
+{% for review in reviews %}
+
+<h3>Added by {{ review.author }}</h3>
+<div>
+    <p>{{ review.review|safe }}</p>
+</div>
+
+<hr>
+{% endfor %}
+{% else %}
+<div class="col-12 text-center">
+    <p>This product has no reviews yet. How about adding one?<br>
+        Click the Add Review button below to get
+        started.</p>
+    <p class="mt-2"><a href="{% url 'add_review' product.id %}" class="cta-btn">Add
+            Review</a></p>
+</div>
+{% endif %}
