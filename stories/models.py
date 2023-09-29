@@ -39,3 +39,12 @@ class Story(models.Model):
     likes = models.ManyToManyField(User, related_name='story_like', blank=True)
     product_match = models.ManyToManyField(Product, blank=True)
     age_match = models.ManyToManyField(TargetAge, blank=False)
+
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return self.title
+
+    def number_of_likes(self):
+        return self.likes.count()

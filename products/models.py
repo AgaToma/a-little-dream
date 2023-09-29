@@ -46,7 +46,7 @@ class Product(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL,
     )
-    sku = models.CharField(max_length=8, unique=True, default=random_sku, 
+    sku = models.CharField(max_length=8, unique=True, default=random_sku,
                            editable=True)
     name = models.CharField(max_length=254)
     author = models.CharField(max_length=200)
@@ -76,4 +76,12 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-
+    def save(self, *args, **kwargs):
+        """Override default save method
+        to update stock level
+        """
+        if self.stock_level <= 0:
+            self.in_stock = False
+        else:
+            self.in_stock = True
+        super().save(*args, **kwargs)

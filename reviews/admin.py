@@ -8,7 +8,7 @@ class ReviewAdmin(admin.ModelAdmin):
     """
     list_display = (
         'product',
-        'user',
+        'author',
         'rating',
         'content',
     )
@@ -20,5 +20,5 @@ class ReviewAdmin(admin.ModelAdmin):
         'rating',
     )
 
-    admin.site.register(Review, ReviewAdmin)
 
+admin.site.register(Review, ReviewAdmin)
