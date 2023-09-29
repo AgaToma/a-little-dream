@@ -8,4 +8,32 @@
     <i class="fa-regular fa-star"></i>
 </div>
 
+<div class="container">
+    <h1 class="text-center light-grey">Stories</h1>
+    <!-- Story button for admins-->
+    {% if user.is_staff %} 
+    <a href="{% url 'add_story' %}" class="btn btn-outline-dark m-2 text-center">Add a Story</a>
+    {% endif %}
+    <!--Story list-->
+    <div class="container d-flex flex-row flex-wrap justify-content-center story-container">
+        <h2>Enjoy a little bedtime magic</h2>
+        {% for story in stories %}
+        <a href="{% url 'story_details' story.id %}" class="m-4 text-center" aria-label="Click to view {{ story.title }}">
+            <div class="card custom-card" style=" width: 18rem;">
+                <img class="card-img-top" src="{{ story.image.url }}" alt="{{ story.image_alt }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ story.title }}</h5>
+                    <div class="row">
+                        <p class="card-text col-sm-6">
+                            <i class="fa-solid fa-people-roof"></i>
+                            {{ story.age_match }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

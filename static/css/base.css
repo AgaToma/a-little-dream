@@ -188,8 +188,7 @@ a.nav-link,
 
 }
   
-
-  .story-container {
+  .story-wrapper {
     background-color:rgb(185 217 239);
     height: 10vh;
   }
@@ -297,6 +296,23 @@ a.nav-link,
 .accordion-button:focus {
     box-shadow: 1px -1px 7px 0 #00000061;
 }
+
+/* Stories */
+
+.story-container {
+    background-image: url('../../media/hero-background.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+.story-container h2 {
+    color:rgb(239, 247, 247);
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+}
+
 
   @media (max-width: 1000px) {
     .hero-wrap {
