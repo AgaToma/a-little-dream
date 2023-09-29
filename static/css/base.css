@@ -313,6 +313,9 @@ a.nav-link,
     font-size: 2rem;
 }
 
+.story-card:hover {
+    box-shadow: 1px 1px 15px 10px rgba(86, 185, 235, 0.5);
+}
 
   @media (max-width: 1000px) {
     .hero-wrap {
