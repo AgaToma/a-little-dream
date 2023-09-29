@@ -34,3 +34,5 @@ class StoryForm(forms.ModelForm):
             'image': 'Story Image',
             'image_alt': 'Describe Image'
         }
+
+  

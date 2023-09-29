@@ -33,3 +33,4 @@ Hero front image 3 - pexels-cottonbro-studio-5801245
 Books - pexels-pavel-danilyuk-7938252
 Lights - pexels-matheus-bertelli-13869602
 Stories - johannes-plenio-DKix6Un55mw-unsplash
+Story 1 - nightforest_by_maril1_dadimvp-fullview

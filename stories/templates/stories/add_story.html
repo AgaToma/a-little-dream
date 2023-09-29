@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Add Story{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="star mx-auto">
+    <i class="fa-regular fa-star"></i>
+</div>
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        <h3 class="text-center light-grey">Add Story</h3>
+        <!--Form to add story-->
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <div class="text-center">
+            <button class="btn btn-info" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

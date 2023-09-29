@@ -22,8 +22,8 @@ class Story(models.Model):
     content = RichTextField(null=False, blank=False)
     added_by = models.ForeignKey(
         User,
-        on_delete=models.SET(get_sentinel_user),
-        limit_choices_to={"is_staff": True},
+        on_delete=models.SET_NULL,
+        null=True
     )
     image = ResizedImageField(
         size=[900, None],
