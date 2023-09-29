@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from models.products import Product, TargetAge
+from products.models import Product, TargetAge
 from .models import Story
 
 

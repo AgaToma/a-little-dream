@@ -70,7 +70,7 @@ class DeleteStory(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     model = Story
     success_url = '/stories/'
-    template_name = 'stories/delete_story.html'
+    template_name = 'stories/edit_story.html'
 
     def test_func(self):
         return self.request.user.is_staff
