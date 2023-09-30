@@ -350,4 +350,10 @@ a.nav-link,
     }
   }
 
+/* Viewport between 320px - 460 px*/
+@media screen and (max-width: 460px) {
+    .logo {
+        height: 4vh;
+    }
+}
  
