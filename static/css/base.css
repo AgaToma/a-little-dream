@@ -124,6 +124,10 @@ a.nav-link,
     text-decoration: none;
 }
 
+.del-link:hover {
+    cursor: pointer;
+}
+
 /* Landing page */
 .hero-background {
     background-image: url('../../media/hero-background.webp');
