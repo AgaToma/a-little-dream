@@ -357,5 +357,8 @@ a.nav-link,
     .logo {
         height: 4vh;
     }
+
+    .hero-background {
+        height: 60vh;
+    }
 }
- 
