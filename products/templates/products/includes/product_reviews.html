@@ -20,10 +20,16 @@
 {% endfor %}
 {% else %}
 <div class="col-12 text-center">
+    {% if user.is_authenticated %}
     <p>This product has no reviews yet. How about adding one?<br>
         Click the Add Review button below to get
         started.</p>
     <p class="mt-2"><a href="{% url 'add_review' product.id %}" class="btn btn-outline-secondary">Add
             Review <i class="fa-solid fa-sm fa-pencil"></i></a></p>
+    {% else %}
+    <p class="mb-2">This product has no reviews yet. How about registering or logging in to add one?</p>
+        <a href="{% url 'account_signup' %}" class="btn btn-outline-secondary">Register <i class="fa-solid fa-user-plus"></i></a>
+        <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+    {% endif %}
 </div>
 {% endif %}
