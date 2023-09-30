@@ -10,7 +10,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
-      
+
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -57,7 +57,7 @@ class Product(models.Model):
     image = ResizedImageField(
         size=[400, None],
         quality=75,
-        upload_to="media/",
+        upload_to="products",
         force_format="WEBP",
         blank=False,
         null=False,
