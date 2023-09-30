@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://a-little-dream-23a29b7469db.herokuapp.com/sitemap.xml
