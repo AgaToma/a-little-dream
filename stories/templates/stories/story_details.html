@@ -11,7 +11,7 @@
 <div class="row mt-2">
     <div class="container col-10 offset-1">
         <div class="story-header text-center">
-            <h1>{{ story.title }} {% if user.is_staff %}
+            <h1 class="light-grey">{{ story.title }} {% if user.is_staff %}
                 <a href="{% url 'edit_story' story.id %}" class="btn btn-outline-dark m-2 text-center">Edit Story</a>
                 {% endif %}</h1>
             <p class="fw-bolder fs-5 text">{{ story.author }}</p>
@@ -20,14 +20,13 @@
                 <i class="fa-solid fa-child px-1"></i> {{ age_match.friendly_name }}
                 {% endfor %}
             </p>
-
-
-
+            <p class="fst-italic">{{ story.excerpt }}</p>
         </div>
         <div class="text-center">
-
             <img class="w-80" src="{{ story.image.url }}" alt="{{ story.image.alt }}">
-
+        </div>
+        <div class="text-center">
+            <p>{{ story.content }}</p>
         </div>
     </div>
 </div>
