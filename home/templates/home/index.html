@@ -18,8 +18,8 @@
         <div class="card-body category-slider">
             <h2 class="category-caption">Lights</h2>
         </div>
-        <div class="overlay">
-            <a href="#" class="btn btn-primary">Shop</a>
+        <div class="overlay text-center pt-3">
+            <a href="{% url 'products' %}?category=lights_lamps" class="btn btn-dark fw-bold">Shop</a>
         </div>
     </div>
     <div class="card category-card" style="width: 18rem;">
@@ -27,8 +27,8 @@
         <div class="card-body category-slider">
             <h2 class="category-caption">Cuddlies</h2>
         </div>
-        <div class="overlay">
-            <a href="#" class="btn btn-primary">Shop</a>
+        <div class="overlay text-center pt-3">
+            <a href="#{% url 'products' %}?category=cuddly_toys" class="btn btn-dark fw-bold">Shop</a>
         </div>
     </div>
     <div class="card category-card" style="width: 18rem;">
@@ -36,23 +36,25 @@
             <img src="https://a-little-dream.s3.eu-west-1.amazonaws.com/media/books.webp" alt="man and child reading">
             <h2 class="category-caption">Books</h2>
         </div>
-        <div class="overlay">
-            <a href="#" class="btn btn-primary">Shop</a>
+        <div class="overlay text-center pt-3">
+            <a href="{% url 'products' %}?category=books" class="btn btn-dark fw-bold">Shop</a>
         </div>
     </div>
-    <div class="card category-card" style="width: 18rem;">
+    <div class="card category-card border-0" style="width: 18rem;">
         <img src="https://a-little-dream.s3.eu-west-1.amazonaws.com/media/story-card.webp" alt="ship in the night sky">
         <div class="card-body category-slider">
             <h2 class="category-caption">Stories</h2>
         </div>
-        <div class="overlay">
-            <a href="#" class="btn btn-primary">Read</a>
+        <div class="overlay text-center pt-3">
+            <a href="{% url 'stories' %}" class="btn btn-warning fw-bold">Read</a>
         </div>
     </div>
 </div>
 <!--Stories container-->
-<div class="container story-wrapper">
-
+<div class="container">
+    <div class="star mx-auto">
+        <i class="fa-regular fa-star"></i>
+    </div>
 </div>
 
 {% endblock %}
