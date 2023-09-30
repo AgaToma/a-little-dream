@@ -40,7 +40,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -49,9 +49,10 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, 
+                               "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = (
                 Q(name__icontains=query)
                 | Q(name__icontains=query)
@@ -174,4 +175,3 @@ def delete_product(request, product_id):
         return HttpResponseRedirect(reverse('products'))
 
     return render(request, 'products/delete_product.html', context)
- 
