@@ -1,4 +1,5 @@
 <header>
+  {% with request.resolver_match.url_name as url_name %}
   <!--Delivery banner-->
   <div id="delivery-banner" class="row text-center">
     <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!
@@ -72,7 +73,7 @@
         </li>
         <!--Account-->
         <li class="list-inline-item dropdown-center mx-4">
-          <a class="text-black nav-link d-block" href="#" id="user-options" data-bs-toggle="dropdown" title="Account"
+          <a class="nav-link d-block" href="#" id="user-options" data-bs-toggle="dropdown" title="Account"
             aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
               <div><i class="fas fa-user fa-lg"></i></div>
@@ -90,7 +91,7 @@
         </li>
         <!--Bag-->
         <li class="list-inline-item my-auto ms-4">
-          <a class="nav-link" href="{% url 'view_bag' %}" data-bs-toggle="tooltip" data-placement="bottom" title="My Bag">
+          <a class="nav-link {% if url_name == 'view_bag' %}active{% endif %}" href="{% url 'view_bag' %}" data-bs-toggle="tooltip" data-placement="bottom" title="My Bag">
             <div class="text-center">
               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             </div>
@@ -106,11 +107,11 @@
       <ul class="navbar-nav mb-2 mb-lg-0 ms-4">
         <!--Home link-->
         <li class="nav-item mx-4">
-          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
         <!--Shop-->
         <li class="nav-item mx-4 dropdown">
-          <a class="nav-link" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link {% if url_name == 'products' %}active{% endif %}" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Shop</a>
           <div class="dropdown-menu menu-area bg-offwhite mx-auto px-1 pb-0 pb-lg-4"
             aria-labelledby="all-products-link">
@@ -131,11 +132,12 @@
         </li>
         <!--Stories-->
         <li class="nav-item mx-4">
-          <a class="nav-link" href="{% url 'stories' %}">Stories</a>
+          <a class="nav-link {% if url_name == 'stories' %}active{% endif %}" href="{% url 'stories' %}">Stories</a>
         </li>
       </ul>
     </div>
   </nav>
+  {% endwith %}
 </header>
 
 {% block postloadjs %}

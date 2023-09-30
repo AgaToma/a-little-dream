@@ -79,6 +79,14 @@ hr {
     width:80%;
 }
 
+.nav-link:hover {
+    color:rgb(4, 160, 238);
+}
+
+.nav-link:active {
+    font-weight: bolder;
+}
+
 /* Footer */
 
 footer {
