@@ -12,6 +12,7 @@ class StoryForm(forms.ModelForm):
         model = Story
         fields = '__all__'
 
+        excerpt = forms.CharField(widget=RichTextWidget())
         content = forms.CharField(widget=RichTextWidget())
 
         age_match = forms.ModelMultipleChoiceField(

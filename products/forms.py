@@ -13,6 +13,8 @@ class ProductForm(forms.ModelForm):
         queryset=TargetAge.objects.all(),
         widget=forms.CheckboxSelectMultiple)
     author = forms.CharField(required=False)
+    highlights = forms.CharField(widget=RichTextWidget())
+    description = forms.CharField(widget=RichTextWidget())
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
