@@ -329,6 +329,17 @@ a.nav-link,
     height: 10rem;
 }
 
+/* Mailchimp */
+
+#mc_embed_signup .mc-field-group {
+    clear: left;
+    position: relative;
+    width: 96%;
+    padding-bottom: 0%; 
+    min-height: 10px;
+    display: grid;
+}
+
   @media (max-width: 1000px) {
     .hero-wrap {
         width:100%;
