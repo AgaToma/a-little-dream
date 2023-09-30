@@ -17,7 +17,7 @@
     <!--Story list-->
     <div class="story-container">
         <h2 class="mb-2 text-center">Enjoy a little bedtime magic</h2>
-        <div class="container d-flex flex-row flex-wrap justify-content-center">
+        <div class="container d-flex flex-row flex-wrap justify-content-center align-items-center">
             {% for story in stories %}
             <a href="{% url 'story_details' story.id %}" class="m-4 text-center text-decoration-none text-dark"
                 aria-label="Click to view {{ story.title }}">
