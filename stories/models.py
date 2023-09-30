@@ -28,7 +28,7 @@ class Story(models.Model):
     image = ResizedImageField(
         size=[900, None],
         quality=75,
-        upload_to="stories/",
+        upload_to="media/",
         force_format="WEBP",
         blank=False,
         null=False,
