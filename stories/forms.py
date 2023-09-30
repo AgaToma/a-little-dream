@@ -10,9 +10,7 @@ class StoryForm(forms.ModelForm):
     """
     class Meta:
         model = Story
-        fields = ['title', 'author', 'excerpt',
-                  'content', 'product_match',
-                  'age_match', 'image', 'image_alt']
+        fields = '__all__'
 
         content = forms.CharField(widget=RichTextWidget())
 
@@ -24,13 +22,5 @@ class StoryForm(forms.ModelForm):
                     queryset=Product.objects.all(),
                     widget=forms.CheckboxSelectMultiple)
 
-        labels = {
-            'title': 'Story Title',
-            'author': 'Author',
-            'excerpt': 'Excerpt',
-            'content': 'Content',
-            'product_match': 'Link Products',
-            'age_match': 'Age Group',
-            'image': 'Story Image',
-            'image_alt': 'Describe Image'
-        }
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)

@@ -37,8 +37,8 @@ class Story(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='story_like', blank=True)
-    product_match = models.ManyToManyField(Product, blank=True)
-    age_match = models.ManyToManyField(TargetAge, blank=False)
+    product_match = models.ManyToManyField(Product)
+    age_match = models.ManyToManyField(TargetAge)
 
     class Meta:
         ordering = ["-created_on"]

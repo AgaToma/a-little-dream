@@ -1,12 +1,12 @@
 from django.views.generic import (CreateView, ListView,
                                   DetailView, DeleteView, UpdateView)
+from .forms import StoryForm
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from .models import Story
-from .forms import StoryForm
 
 
 class StoryList(ListView):
