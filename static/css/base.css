@@ -83,7 +83,7 @@ hr {
     color:rgb(4, 160, 238);
 }
 
-.nav-link:active {
+.nav-link.active {
     font-weight: bolder;
 }
 
