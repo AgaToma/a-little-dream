@@ -13,9 +13,9 @@
         <div class="col-12 offset-lg-2">
             <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb  px-0 mb-0">
-                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'products' %}">All Products</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-dark">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-dark">All Products</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}" class="text-dark">
                             {{ product.category.friendly_name }}</a></li>
                     <li class="breadcrumb-item active current-item-crumb" aria-current="page">
                         <strong>{{ product.name }}</strong></li>
