@@ -14,8 +14,8 @@
             <h6 class="px-3">Information</h6>
             <div class="flex flex-column">
                 <ul class="list-unstyled grey">
-                    <li><a href="#" class="nav-link px-3">Privacy Policy</a></li>
-                    <li><a href="#" class="nav-link px-3">Terms and Conditions</a></li>
+                    <li><a href="{% url 'privacy' %}" class="nav-link px-3">Privacy Policy</a></li>
+                    <li><a href="{% url 'terms' %}" class="nav-link px-3">Terms and Conditions</a></li>
                     <li><a href="#" class="nav-link px-3">Delivery & returns</a></li>
                 </ul>
             </div>
@@ -46,6 +46,7 @@
             </ul>
         </div>
     </div>
+    <!--Mailchimp signup form-->
     <div class="collapse" id="collapseNewsletter">
         <div class="card card-body">
             <div id="mc_embed_shell">
