@@ -38,9 +38,9 @@ class AddStory(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """
     View for adding stories by staff
     """
-    template_name = 'stories/add_story.html'
     model = Story
     form_class = StoryForm
+    template_name = 'stories/add_story.html'
     success_url = '/stories/'
 
     def form_valid(self, form):
@@ -57,8 +57,8 @@ class EditStory(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     template_name = 'stories/edit_story.html'
     model = Story
-    success_url = '/stories/'
     form_class = StoryForm
+    success_url = '/stories/'
 
     def test_func(self):
         return self.request.user.is_staff
