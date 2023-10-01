@@ -1,3 +1,317 @@
+Back to [Readme](README.md)
+
+The site has been thoroughly tested during development, however this document describes tests performed upon completion.
+
+# Table of Contents
+
+- [Functional Testing](#functional-testing)
+  - [Links & anchors](#links-anchors)
+  - [Forms](#forms)
+  - [Products](#products)
+  - [Bag and checkout](#bag-checkout)
+  - [Admin](#admin)
+- [Validator Testing](#validator-testing)
+  - [HTML](#html)
+  - [CSS](#css)
+  - [Python](#python)
+- [Accessibility](#accessibility)
+- [Responsiveness](#responsiveness)
+- [Lighthouse Report](#lighthouse-report)
+- [Unit Tests](#unit-tests)
+- [Bugs](#bugs)
+
+# Functional Testing
+
+## Links & anchors
+**Description:**
+Test all links on the site to ensure they direct to correct pages.
+
+**Steps to test:**
+
+Click all listed links and anchors -> Check if the correct page displays
+
+Tested Navigation Links:
+
+- Home -> index.html
+Shop:
+- All Products -> products.html
+- Cuddlies, Lights, Books - products.html relevant category only
+- - Add Product - add_product.html (admin only)
+Account:
+- Register - signup.html
+- Log in -> login.html
+- Log out -> logout.html
+- Profiles -> profile.html
+- Stories -> stories.html
+- Bag -> bag.html
+- Search -> Expands search bar
+
+Links from Footer:
+
+- Privacy policy - privacy.html
+- Terms and conditions - terms.html
+- Delivery and shipping - banner expands
+- Newsletter - newsletter form expands
+
+Password reset link (login.html)
+Email verification link
+
+
+Anchors - cards:
+
+- Product category cards - open detail pages for correct product categories
+- Stories card - opens stories page
+
+Products - buttons & Links:
+
+- Edit & delete product links
+
+Stories - buttons & Links:
+- Add, Edit & delete story buttons
+
+Reviews:
+- Add Review
+
+**Expected result:**
+Correct pages and/or content display from all links
+
+**Actual Result:**
+As Expected
+
+**Assessment:**
+Pass
+
+## Forms
+
+**Description:**
+Test all forms on the site to ensure they function as designed.
+### Authentication (Users)
+
+#### Sign up
+
+Test 1<br>
+**Steps to test:**
+
+Enter email address -> Enter email address again -> Enter username -> Enter password -> Repeat same password -> Click submit
+
+**Expected result:**
+Form submits, new user is created, success message is displayed to user, new user is showing in admin
+
+Test 2<br>
+**Steps to test:**
+
+Enter email address -> Enter email address again -> Enter username ->Enter password -> Enter different password -> Click submit
+
+**Expected result:**
+Form doesn't sumbit, password doesn't match error message is displayed to user
+<hr>
+
+**Actual Results:**
+As Expected
+
+**Assessment:**
+Pass
+
+<hr>
+
+#### Log in
+
+Test 1 <br>
+
+**Steps to test:**
+
+Enter username -> Enter password -> Click Sign in
+**Expected result:**
+Form submits, user is logged in, success message is displayed to user
+
+Test 2 <br>
+**Steps to test:**
+
+Enter username -> Enter wrong password -> Click Sign in
+
+**Expected result:**
+Form doesn't sumbit, password doesn't match error message is displayed to user
+
+<hr>
+
+**Actual Results:**
+As Expected
+
+**Assessment:**
+Pass
+
+<hr>
+
+#### Log out
+**Steps to test:**
+
+Click Sign out button on navbar -> Click Signout on confirmation
+
+**Expected result:**
+User gets logged out
+
+**Actual Result:**
+As Expected
+
+**Assessment:**
+Pass
+
+<hr>
+
+### Products
+
+#### Add Product
+
+Test 1 <br>
+
+**Steps to test:**
+Fill out all fields on the form -> click submit
+
+**Expected result:**
+Fields display on form as designed, form submits, product is created with all fields displayed as selected on the form
+
+Test 2 <br>
+**Steps to test:**
+Fill out all fields on the form, but omit image
+
+**Expected result:**
+Form doesn't submit and scrolls to the field that needs to be filled out, if photo or photo alt field a message shows to fill them out
+
+<hr>
+
+**Actual Results:**
+As Expected
+
+**Assessment:**
+Pass
+<hr>
+
+#### Edit Product
+
+Test 1 <br>
+**Steps to test:**
+Edit price -> click Submit
+
+**Expected result:**
+Form submits, price field is displayed with the new value
+
+Test 2 <br>
+**Steps to test:**
+Remove price value -> click Submit
+
+**Expected result:**
+Form doesn't submit, a message shows to fill out the price field
+
+<hr>
+**Actual Results:**
+As Expected - As a result of testing edit forms, a need for Cancel button was identified to increase edit forms user friendliness.
+
+**Assessment:**
+Pass
+
+<hr>
+
+### Remaining create/edit forms
+All remaining create/edit forms on the site were tested according to the above logic. 
+
+## Products
+
+### Stock count
+Test 1 <br>
+**Steps to test:**
+Place an order with product quantity. Check if bought product got deducted from previous quantity on products page.
+
+**Expected result:**
+Stock quantity updated.
+
+<hr>
+**Actual Results:**
+As Expected - As a result of testing edit forms, a need for Cancel button was identified to increase edit forms user friendliness.
+
+**Assessment:**
+Pass
+
+### Quantity update
+Test 1 <br>
+**Steps to test:**
+Increase quantity on the selector. Decrease quantity on the selector. 
+
+**Expected result:**
+Quantity changes - plus is disabled when it reaches max stock, minus is disabled at quantity 1.
+
+<hr>
+**Actual Results:**
+As Expected.
+
+**Assessment:**
+Pass
+
+### Add To Bag
+Test 1 <br>
+**Steps to test:**
+Press Add to Bag button.
+
+**Expected result:**
+Product showing in bag.
+
+<hr>
+**Actual Results:**
+As Expected 
+
+**Assessment:**
+Pass
+
+## Bag and checkout
+
+### Change quantity in bag
+Test 1 <br>
+**Steps to test:**
+Press plus on quantity and click update. Press minus and quick update. Press remove.
+
+**Expected result:**
+Quantity updates as designed, order value changes accordingly, product removed. 
+
+<hr>
+**Actual Results:**
+As Expected 
+
+**Assessment:**
+Pass
+
+### Proceed to checkout
+Test 1 <br>
+**Steps to test:**
+Press Checkout button.
+
+**Expected result:**
+Checkout form appears with correct bag contents transferred to summary.
+
+<hr>
+**Actual Results:**
+As Expected 
+
+**Assessment:**
+Pass
+
+### Complete checkout
+Test 1 <br>
+**Steps to test:**
+Fillout form, enter test card in payment section. Press complete button. Go to Stripe to confirm.
+
+**Expected result:**
+Overlay appears, order confirmed, confirmation email is received, payment successful in Stripe.
+
+<hr>
+**Actual Results:**
+As Expected - Initially there was a webhook issue, which was preventing sending emails and showing webhook failures. This was fixed by updating the WH secret key.
+
+**Assessment:**
+Pass
+
+## Admin
+
+Testing of admin was also performed to ensure the designed functionality of registered model management, especially user management (delete, update permissions), as currently there is no interface available for this functionality on the website.
+
 # Validator Testing
 
 ## HTML
