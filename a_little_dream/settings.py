@@ -32,7 +32,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 development = os.environ.get('DEVELOPMENT', False)
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = development
+#DEBUG = development
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-agatoma-alittledream-crnpu8de9mg.ws-eu105.gitpod.io',
                  'a-little-dream-23a29b7469db.herokuapp.com', 'localhost',]
