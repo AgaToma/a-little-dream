@@ -17,6 +17,8 @@ can be accessed here [A Little Dream](https://a-little-dream-23a29b7469db.heroku
   - [The Scope Plane](#the-scope-plane)
   - [The Structure Plane](#the-structure-plane)
     - [Features](#features)
+      - [Site wide](#site-wide)
+      - [App related](#app-related)
     - [Future Features](#future-features)
   - [The Skeleton Plane](#the-skeleton-plane)
     - [Wireframes](#wireframes)
@@ -234,54 +236,64 @@ Site is functional and maintains full presentabillity on different screen sizes 
 
 ### Features
 
+#### Site wide
+
 **Navigation**
-![Navbar image](docs/readme_images/navbar.png)
+![Navbar image](docs/images/navbar.png)
 Site wide responsive Bootrstrap navbar was added for easy navigation between pages. To achieve responsiveness it
-collapses to hamburger on smaller screens. It contains different links depending on whether the user is logged in and
-user role. It also contains a search box for rooms search with custom tooltip containing search instructions.
+collapses to hamburger on smaller screens. Search icon expands to a search bar when clicked. Shop link expands to Products menu with product categories, Account icon expands to Register & Login menu or, if user is logged in to Profile & Log out. Offcanvas banner advertising free delivery threshold is placed above navbar and when clicked, expands to information about shipping and delivery.
 Navbar is placed in the header template (main project templates).
 
 **Footer**
-![Home image](docs/readme_images/footer.png)
-Footer is visible across all pages on the site. It contains social media links, so that guests can follow the b&b, if they like.
+![Home image](docs/images/footer.png)
+Footer is visible across all pages on the site. It contains social media links, newsletter signup link, which expands when clicked, privacy policy and terms & condition pages links.It also contains shipping & delivery information link, which when clicked expands the banner on top of the page.
+
+**Back to top button**
+This button was implemented for convenience, to save scrolling up for the shoppers.
+
+**Favicon** <br>
+Favicon was added to enable user locating the tab easier when multiple tabs are open.
+
+**403 and 404 error pages** <br>
+Error pages were created for a friendly way of informing the user that they have no access to view a requested page (403) or that a page they requested doesn't exist (404). Both error pages contain a message and link to redirect the user back to home page.
+
+**Confirmation messages - toasts**
+![Pop up](docs/images/toast.png)
+Toast messages were implemented to inform the user about successful actions (like sign in, checkout), alerts (like editing), errors.
 
 **Home page** <br>
-The goal of home page is to present the B&B to potential guests and get them interested. It contains hero image, bed and breakfast description with information about rooms, breakfasts, bookings and payments. Bookings and payments section is collapsible to avoid clutter on smaller devices. There is also a Bootstrap carousel with more breakfast details.
-Below description, there is a location information. Home page is part of a home app, shown from index template.
-![Home image](docs/readme_images/home.png)
+The goal of home page is to present the store to potential shoppers and get them interested. It contains hero image and motto. There are 4 cards showcasing each category of the sold products and stories.
+Home page is part of a home app, shown from index template.
+![Home image](docs/images/home.png)
 
 **Sign up form** <br>
 Form is provided to allow users to register. Signup template was taken from allauth module and styled to match the site appearance.
-![Form image](docs/readme_images/signup.png)
+![Form image](docs/images/signup.png)
 
-**Log in form** <br>
-Form is provided to allow users to log in. Login template was taken from allauth module and styled to match the site appearance.
-![Form image](docs/readme_images/login.png)
+**Log in form and logout** <br>
+Form is provided to allow users to log in. Login template was taken from allauth module and styled to match the site appearance.Logout template was taken from allauth module and styled to match the site appearance. Before logging the user out it confirms, if user wants to log out.
+![Form image](docs/images/login.png)
 
-**Log out** <br>
-Logout template was taken from allauth module and styled to match the site appearance. Before logging the user out it confirms, if user wants to log out.
-![Form image](docs/readme_images/signout.png)
+#### App related
 
-**Create room page**
-![Create room](docs/readme_images/create_room.png)
-Within the Rooms app, Create Room page with form was made to provide a friendly UI to staff admin users without them having to use Django admin, when they need to add a new room to the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+**Add product page**
+![Add products](docs/images/add_prod.png)
+Within the Products app, Add product page with form was made to provide a friendly UI to admin users without them having to use Django admin, when they need to add a new product to the store offer. This is only accessibly to admin users via extra option on the Shop -> Products menu from navbar.
 
-**Edit room page**
-![Edit room](docs/readme_images/edit_room.png)
-Within the Rooms app, Edit room page with form was made to provide a friendly UI to staff users without them having to use Django admin, when they need to edit details of an exisiting room in the b&b offer. This is only accessibly to staff users, access is restricted via mixins.
+**Edit & delete product**
+Admin users can also edit products via edit form or delete it. Both functionalities can be accessed by them via buttons on each product card from products page or from product details. Admin is asked for confirmation before deleting is complete. 
 
-**Rooms page**
-![Rooms](docs/readme_images/rooms.png)
-Rooms page was created to show a list of all available rooms on offer. Bootsrap cards were used to display rooms, showing room names, photos and basic details like capacity and view. It's in the Rooms app and is accessible to all viewers of the website without restrictions.
+**Products page**
+![Products](docs/images/products.png)
+Products page was created to show a list of all available products on offer. It allows the users to sort product by category, alphabetically, price, etc. If shopper clicks specific product category from navbar Shop menu or landing page cards, the page filters and shows products from this specific category. It's in the Products app and is accessible to all viewers of the website without restrictions.
 
-**Room Details**
-![Room Details](docs/readme_images/room_details.png)
-Users are directed to respective Room details page after clicking on one of the room cards on Rooms page. They can see a more detailed room description there, price and room number. This is visible for any viewers, but options vary depending on permissions. If a user is not logged in, they can see instructions how to book the room (log in or call b&B). If they are logged in, they can see "Book Room" button. If they are admin, they can also see "Edit Room" button, which directs to Edit Room page and "Delete Room", which allows to perform delete operation. Before proceeding with the deletion, user is asked to confirm, it they want to delete.
-![Confirm delete](docs/readme_images/confirm_delete.png)
+**Product Details**
+![Product Details](docs/images/prod_details.png)
+Shoppers are directed to respective Product details page after clicking on one of the product cards on Products page. They can see a more detailed description there, rating, recommended age, price, stock, review section. This is visible for any viewers, but options vary depending on permissions. Admin users have options to access product edit & delete. All shoppers can add products to bag via call to action button. 
 
-**New booking page**
-![New Booking](docs/readme_images/new_booking.png)
-New booking page and form are a part of Bookings app. Logged in user can access them from Room Details or Home Page. There is validation implemented to ensure the input of required and correct information. No fields can be left empty, if a room with less capacity then entered is selected a descriptive error message is displayed to the user, if user selects earlier check out than check in, a descriptive error message is also displayed. If the selected room is not available during selected dates due to another booking, a message is also displayed informing user of the same.
+**Bag**
+![Bag](docs/images/bag.png)
+Bag page is accessible via bag icon on the navbar
 
 **Bookings list page**
 ![Bookings list](docs/readme_images/bookings_list.png)
@@ -291,15 +303,8 @@ Bookings list page was made within Bookings app, so that logged in users can vie
 ![Booking details](docs/readme_images/booking_details.png)
 After clicking on the booking card on Bookings list page, the user can view their booking summary. They also have buttons available to edit the booking, which directs to edit booking form or delete booking, where a confirmation is required before deletion is completed.
 
-**403 and 404 error pages** <br>
-Error pages were created for a friendly way of informing the user that they have no access to view a requested page (403) or that a page they requested doesn't exist (404). Both error pages contain a message and link to redirect the user back to home page.
 
-**Confirmation messages**
-![Pop up](docs/readme_images/pop_up.png)
-Pop up messages were implemented to inform the user about successful sign in, log out and booking.
 
-**Favicon** <br>
-Favicon was added to enable user locating the tab easier when multiple tabs are open.
 
 ### Future Features
 

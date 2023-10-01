@@ -3,7 +3,6 @@ from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.crypto import get_random_string
-from django.contrib.postgres.fields import ArrayField
 
 
 class Category(models.Model):

@@ -91,7 +91,7 @@
         </li>
         <!--Bag-->
         <li class="list-inline-item my-auto mx-2 ms-md-4">
-          <a class="nav-link {% if url_name == 'view_bag' %}active{% endif %}" href="{% url 'view_bag' %}" data-bs-toggle="tooltip" data-placement="bottom" title="My Bag">
+          <a class="nav-link {% if url_name == 'view_bag' %}active{% endif %}" href="{% url 'view_bag' %}" data-bs-toggle="tooltip" data-placement="bottom" title="€{{ grand_total|floatformat:2 }}">
             <div class="text-center">
               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             </div>
