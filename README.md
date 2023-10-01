@@ -291,23 +291,33 @@ Products page was created to show a list of all available products on offer. It 
 ![Product Details](docs/images/prod_details.png)
 Shoppers are directed to respective Product details page after clicking on one of the product cards on Products page. They can see a more detailed description there, rating, recommended age, price, stock, review section. This is visible for any viewers, but options vary depending on permissions. Admin users have options to access product edit & delete. All shoppers can add products to bag via call to action button. 
 
+**Reviews**
+![Reviews](docs/images/reviews.png)
+Review section allows logged in users to add a review and also to update/delete previously added reviews by authors. All shoppers can view previously added reviews. Reviews are not deleted if a profile is.
+
 **Bag**
 ![Bag](docs/images/bag.png)
-Bag page is accessible via bag icon on the navbar
+Bag page is accessible via bag icon on the navbar. A tooltip displays bag total on hover. Shopper can proceed to secure checkout via call to action button or go back to shopping.
 
-**Bookings list page**
-![Bookings list](docs/readme_images/bookings_list.png)
-Bookings list page was made within Bookings app, so that logged in users can view their own bookings. Bookings are ordered by check in date. Staff users can see all bookings and can perform search using booking id in this UI. If a search with different parameters is needed, they need to use Django admin interface. Secure access according to designed permissions is ensured via mixins.
+**Checkout page**
+![Checkout](docs/images/checkout.png)
+Shoppers are directed to checkout page from bag, they fill out their information, which can also be pre-saved on profile. They can checkout without being logged in, but this way they won't have the order in order history. Payments are set up via Stripe. As this is a test feature, no actual payments will be taken. 
 
-**Booking details**
-![Booking details](docs/readme_images/booking_details.png)
-After clicking on the booking card on Bookings list page, the user can view their booking summary. They also have buttons available to edit the booking, which directs to edit booking form or delete booking, where a confirmation is required before deletion is completed.
+**Order confirmation**
+![Order confirmation](docs/images/confirmation.png)
+After a successful checkout the shopper is directed to order confirmation page. This can also be later accessed from shopper profile, provided the order was placed when logged in.
 
+**Profile page**
+![Profile](docs/images/profile.png)
+Logged in users can view their profile with personal information, that can be updated by them. It also contains order history and links to each order confirmation.
 
-
+**Stories page**
+![Stories](docs/images/stories.png)
+Stories can be accessed via navbar or a card from landing page. Upon clicking a story reader is directed to a story content page, which also contains related product cards for product placing. Stories are a part of marketing strategy and product placement. They're goal is to make the site more attractive to the target customer group, create brand loyalty and enhance product placement.
 
 ### Future Features
 
+- Product match advisor
 - 
 
 ## The Skeleton Plane
