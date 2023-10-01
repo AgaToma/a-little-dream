@@ -2,7 +2,7 @@
   {% with request.resolver_match.url_name as url_name %}
   <!--Delivery banner-->
   <div id="delivery-banner" class="row text-center">
-    <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!
+    <h4 class="my-1">Free delivery on orders over €{{ free_delivery_threshold }}!
       <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
           class="bi bi-chevron-compact-down" viewBox="0 0 16 16">
@@ -90,7 +90,7 @@
         </li>
         <!--Bag-->
         <li class="list-inline-item my-auto mx-2 ms-md-4">
-          <a class="nav-link {% if url_name == 'view_bag' %}active{% endif %}" href="{% url 'view_bag' %}" data-bs-toggle="tooltip" data-placement="bottom" title="€{{ grand_total|floatformat:2 }}">
+          <a class="nav-link" href="{% url 'view_bag' %}" data-bs-toggle="tooltip" data-placement="bottom" title="€{{ grand_total|floatformat:2 }}">
             <div class="text-center">
               <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             </div>

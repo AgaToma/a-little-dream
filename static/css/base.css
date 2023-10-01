@@ -39,7 +39,7 @@ h4 {
 
 #delivery-banner,
 .offcanvas {
-    background-color: #4d8ebb;
+    background-color: #79b7e3;
 }
 
 .logo {
@@ -140,7 +140,7 @@ a.nav-link,
 
 
 .hero-background h1 {
-    color:rgb(239, 247, 247);
+    color:white;
     margin: 1%;
     font-family: 'Caveat', cursive;
     font-size: 4rem;
@@ -192,7 +192,9 @@ a.nav-link,
     color:white;
     margin: 0;
     padding: 0;
-
+    background: linear-gradient(to right, rgba(141, 152, 169, 0.4), rgba(124, 135, 152,
+                0.6));
+    border-radius: 5px;
 }
   
   .story-wrapper {
