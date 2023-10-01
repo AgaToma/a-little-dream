@@ -7,174 +7,172 @@
 <div class="star mx-auto">
     <i class="fa-regular fa-star"></i>
 </div>
-<div class="container-fluid">
-    <!-- Product Specific Breadcrumbs -->
-    <div class="row">
-        <div class="col-12 offset-lg-2">
-            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                <ol class="breadcrumb  px-0 mb-0">
-                    <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-dark">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-dark">All Products</a></li>
-                    <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}" class="text-dark">
-                            {{ product.category.friendly_name }}</a></li>
-                    <li class="breadcrumb-item active current-item-crumb" aria-current="page">
-                        <strong>{{ product.name }}</strong></li>
-                </ol>
-            </nav>
+
+<!-- Product Specific Breadcrumbs -->
+<div class="row">
+    <div class="col-12 offset-lg-2">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb  px-0 mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-dark">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'products' %}" class="text-dark">All Products</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'products' %}?category={{ product.category.name }}"
+                        class="text-dark">
+                        {{ product.category.friendly_name }}</a></li>
+                <li class="breadcrumb-item active current-item-crumb" aria-current="page">
+                    <strong>{{ product.name }}</strong></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="row">
+    <!-- Product Image -->
+    <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="image-container my-5">
+            {% if product.image %}
+            <a href="{{ product.image.url }}" target="_blank">
+                <img class="card-img-top img-fluid img-dims2" src="{{ product.image.url }}" alt="{{ product.name }}">
+            </a>
+            {% else %}
+            <a href="">
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+            </a>
+            {% endif %}
         </div>
     </div>
-    <div class="row">
-        <!-- Product Image -->
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <div class="image-container my-5">
-                {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
-                    <img class="card-img-top img-fluid img-dims2" src="{{ product.image.url }}"
-                        alt="{{ product.name }}">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="product-details-container mb-5 mt-md-5">
+            <h2 class="mb-0 px-2 light-blue card-shadow">{{ product.name }}</h2>
+            {% if product.author %}
+            <p><strong>Author:</strong> {{ product.author }} </p>
+            {% endif %}
+            <p class="lead mb-0 text-left"><strong>€{{ product.price }}</strong></p>
+            {% if product.category %}
+            <p class="small mt-1 mb-0">
+                <a class="text-muted text-decoration-none"
+                    href="{% url 'products' %}?category={{ product.category.name }}">
+                    <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
                 </a>
+            </p>
+            {% endif %}
+            <!-- Stock information -->
+            <div class="col-12 col-md-6">
+                {% if product.in_stock %}
+                <p class="pl-2">
+                    <i class="fa-regular fa-square-check text-success"></i>
+                    {{ product.stock_level}} In Stock
+                </p>
+                {% elif product.stock_level == 1 %}
+                <p class="text-uppercase text-warning p-1 pl-2 pr-2 wh-fit-content">Last item</p>
+                {% elif product.stock_level <= 5 %}
+                <p class="text-uppercase text-warning p-1 pl-2 pr-2 wh-fit-content">Last {{product.stock}} items
+                </p>
                 {% else %}
-                <a href="">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                </a>
+                <p class="pl-2"><i class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
+                    Stock</p>
                 {% endif %}
             </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="product-details-container mb-5 mt-md-5">
-                <h2 class="mb-0 px-2 light-blue card-shadow">{{ product.name }}</h2>
-                {% if product.author %}
-                <p><strong>Author:</strong> {{ product.author }} </p>
-                {% endif %}
-                <p class="lead mb-0 text-left"><strong>€{{ product.price }}</strong></p>
-                {% if product.category %}
-                <p class="small mt-1 mb-0">
-                    <a class="text-muted text-decoration-none"
-                        href="{% url 'products' %}?category={{ product.category.name }}">
-                        <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
-                    </a>
+            <!-- Age group info -->
+            <div>
+                <p><strong>Recommended for ages:</strong>
+                    {% for age in product.target_ages.all %}
+                    {{ age.friendly_name }},
+                    {% endfor %}
                 </p>
-                {% endif %}
-                <!-- Stock information -->
-                <div class="col-12 col-md-6">
-                    {% if product.in_stock %}
-                    <p class="pl-2">
-                        <i class="fa-regular fa-square-check text-success"></i>
-                        {{ product.stock_level}} In Stock
-                    </p>
-                    {% elif product.stock_level == 1 %}
-                    <p class="text-uppercase text-warning p-1 pl-2 pr-2 wh-fit-content">Last item</p>
-                    {% elif product.stock_level <= 5 %}
-                    <p class="text-uppercase text-warning p-1 pl-2 pr-2 wh-fit-content">Last {{product.stock}} items
-                    </p>
-                    {% else %}
-                    <p class="pl-2"><i class="fa-regular fa-rectangle-xmark text-danger"></i> Out of
-                        Stock</p>
-                    {% endif %}
-                </div>
-                <!-- Age group info -->
-                <div>
-                    <p><strong>Recommended for ages:</strong>
-                        {% for age in product.target_ages.all %}
-                        {{ age.friendly_name }},
-                        {% endfor %}
-                    </p>
-                </div>
-                <!-- Rating -->
-                {% if reviews %}
-                <small><i class="fas fa-star mr-1 text-warning"></i> {{ rating_avg.rating__avg|floatformat:"-1" }}
-                    / 5</small>
-                {% else %}
-                <small class="text-muted">No Rating</small>
-                {% endif %}
-                <!-- Description -->
-                <div>
-                    <p class="mt-3">{{ product.description }}</p>
-                </div>
-                <!-- Add to bag form -->
-                <form action="{% url 'add_to_bag' product.id %}" method="POST">
-                    {% csrf_token %}
-                    <div class="form-row">
-                        <div class="col-12">
-                            <!-- submit button -->
-                            {% if product.in_stock %}
-                            <input type="submit" value="Add to Bag" class="btn btn-lg btn-info mt-2 px-5 cta-btn">
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </div>
+            <!-- Rating -->
+            {% if reviews %}
+            <small><i class="fas fa-star mr-1 text-warning"></i> {{ rating_avg.rating__avg|floatformat:"-1" }}
+                / 5</small>
+            {% else %}
+            <small class="text-muted">No Rating</small>
+            {% endif %}
+            <!-- Description -->
+            <div>
+                <p class="mt-3">{{ product.description }}</p>
+            </div>
+            <!-- Add to bag form -->
+            <form action="{% url 'add_to_bag' product.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-12">
+                        <!-- submit button -->
+                        {% if product.in_stock %}
+                        <input type="submit" value="Add to Bag" class="btn btn-lg btn-info mt-2 px-5 cta-btn">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
-                            {% endif %}
-                            <p class="mt-3"><strong>Quantity</strong></p>
-                            <div class="form-group w-50">
-                                <div class="input-group input-group-{{ product.id }}">
-                                    <!-- minus button -->
-                                    <div class="input-group-prepend">
-                                        <button
-                                            class="decrement-qty btn btn-dark rounded-0 decrement-qty_{{ product.id }}"
-                                            data-item_id="{{ product.id }}" aria-label="Decrease Quantity">
-                                            <i class="fa-solid fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <!-- quantity value -->
-                                    <input class="text-center form-control qty_input id_qty_{{ product.id }}"
-                                        type="number" name="quantity" value="1" min="1" max="{{ product.stock_level }}"
-                                        data-item_id="{{ product.id }}" aria-label="Quantity">
-                                    <!-- plus button -->
-                                    <div class="input-group-append">
-                                        <button
-                                            class="increment-qty btn btn-dark rounded-0 increment-qty_{{ product.id }}"
-                                            data-item_id="{{ product.id }}" data-stock="{{ product.stock_level }}"
-                                            aria-label="Increase Quantity">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </button>
-                                    </div>
+                        {% endif %}
+                        <p class="mt-3"><strong>Quantity</strong></p>
+                        <div class="form-group w-50">
+                            <div class="input-group input-group-{{ product.id }}">
+                                <!-- minus button -->
+                                <div class="input-group-prepend">
+                                    <button class="decrement-qty btn btn-dark rounded-0 decrement-qty_{{ product.id }}"
+                                        data-item_id="{{ product.id }}" aria-label="Decrease Quantity">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
                                 </div>
-                            </div>
-                            <!-- Update product for admins -->
-                            {% if request.user.is_superuser %}
-                            <div class="mt-2">
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}">Edit Product</a> |
-                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete
-                                        Product</a>
-                                </small>
-                            </div>
-                            {% endif %}
-                            <!-- Reviews -->
-                            <div class="accordion accordion-flush mt-4" id="reviewAccordion">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                            aria-expanded="false" aria-controls="flush-collapseOne">
-                                            Reviews
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#reviewAccordion">
-                                        <div class="accordion-body">
-                                            {% include './includes/product_reviews.html' %}
-                                        </div>
-                                    </div>
+                                <!-- quantity value -->
+                                <input class="text-center form-control qty_input id_qty_{{ product.id }}" type="number"
+                                    name="quantity" value="1" min="1" max="{{ product.stock_level }}"
+                                    data-item_id="{{ product.id }}" aria-label="Quantity">
+                                <!-- plus button -->
+                                <div class="input-group-append">
+                                    <button class="increment-qty btn btn-dark rounded-0 increment-qty_{{ product.id }}"
+                                        data-item_id="{{ product.id }}" data-stock="{{ product.stock_level }}"
+                                        aria-label="Increase Quantity">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
                                 </div>
-                            </div>
-                            <!-- Back to shop btn -->
-                            <div>
-                                <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 mt-3 shop-btn">
-                                    <span class="mr-2"><i class="fa-solid fa-chevron-left"></i></span>
-                                    <span>Back to Shop</span>
-                                </a>
                             </div>
                         </div>
+                        <!-- Update product for admins -->
+                        {% if request.user.is_superuser %}
+                        <div class="mt-2">
+                            <small class="ml-3">
+                                <a href="{% url 'edit_product' product.id %}">Edit Product</a> |
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete
+                                    Product</a>
+                            </small>
+                        </div>
+                        {% endif %}
+                        <!-- Reviews -->
+                        <div class="accordion accordion-flush mt-4" id="reviewAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        Reviews
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#reviewAccordion">
+                                    <div class="accordion-body">
+                                        {% include './includes/product_reviews.html' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back to shop btn -->
+                        <div>
+                            <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 mt-3 shop-btn">
+                                <span class="mr-2"><i class="fa-solid fa-chevron-left"></i></span>
+                                <span>Back to Shop</span>
+                            </a>
+                        </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
-    {% block postloadjs %}
-    {{ block.super }}
+{% block postloadjs %}
+{{ block.super }}
 
-    {% include 'products/includes/quantity_script.html' %}
-    <script>
-        $breadcrumb - divider: quote(">");
-    </script>
-    {% endblock %}
+{% include 'products/includes/quantity_script.html' %}
+<script>
+    $breadcrumb - divider: quote(">");
+</script>
+{% endblock %}

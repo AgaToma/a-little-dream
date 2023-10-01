@@ -13,9 +13,8 @@
     </h4>
   </div>
   <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" data-bs-scroll="true" data-bs-backdrop="false"
-    aria-labelledby="offcanvasTopLabel">
+    aria-labelledby="offcanvasTop">
     <div class="offcanvas-header">
-      <h5 id="offcanvasTopLabel"></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -141,7 +140,7 @@
 </header>
 
 {% block postloadjs %}
-<script type="text/javascript">
+<script>
   var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
