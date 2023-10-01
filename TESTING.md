@@ -328,7 +328,7 @@ Custom CSS code rendered no errors in the [Jigsaw Validator](https://jigsaw.w3.o
 ![CSS validation](docs/testing/css_val.png)
 
 ## Python
-Initially small errors like trailing whitespaces, no new line at end of document were detected and corrected. All python files with the exception of settings.py are showing no errors.
+All python files were tested with [CI Pep](https://pep8ci.herokuapp.com/). Initially small errors like trailing whitespaces, no new line at end of document were detected and corrected. All python files with the exception of settings.py are showing no errors.
 In settings.py the django auto generated code for AUTH_PASSWORD_VALIDATORS and also cloudinary storage path are showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
 
 ![Python validation](docs/testing/pep.png)
