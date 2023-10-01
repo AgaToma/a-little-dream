@@ -258,13 +258,15 @@ Favicon was added to enable user locating the tab easier when multiple tabs are 
 Error pages were created for a friendly way of informing the user that they have no access to view a requested page (403) or that a page they requested doesn't exist (404). Both error pages contain a message and link to redirect the user back to home page.
 
 **Confirmation messages - toasts**
+
 ![Pop up](docs/images/toast.png)
 Toast messages were implemented to inform the user about successful actions (like sign in, checkout), alerts (like editing), errors.
 
 **Home page** <br>
 The goal of home page is to present the store to potential shoppers and get them interested. It contains hero image and motto. There are 4 cards showcasing each category of the sold products and stories.
 Home page is part of a home app, shown from index template.
-![Home image](docs/images/home.png)
+![Home image](docs/images/home1.png)
+![Home image](docs/images/home2.png)
 
 **Sign up form** <br>
 Form is provided to allow users to register. Signup template was taken from allauth module and styled to match the site appearance.
@@ -277,7 +279,7 @@ Form is provided to allow users to log in. Login template was taken from allauth
 #### App related
 
 **Add product page**
-![Add products](docs/images/add_prod.png)
+![Add products](docs/images/add_product.png)
 Within the Products app, Add product page with form was made to provide a friendly UI to admin users without them having to use Django admin, when they need to add a new product to the store offer. This is only accessibly to admin users via extra option on the Shop -> Products menu from navbar.
 
 **Edit & delete product**
@@ -309,10 +311,12 @@ After a successful checkout the shopper is directed to order confirmation page. 
 
 **Profile page**
 ![Profile](docs/images/profile.png)
+
 Logged in users can view their profile with personal information, that can be updated by them. It also contains order history and links to each order confirmation.
 
 **Stories page**
 ![Stories](docs/images/stories.png)
+
 Stories can be accessed via navbar or a card from landing page. Upon clicking a story reader is directed to a story content page, which also contains related product cards for product placing. Stories are a part of marketing strategy and product placement. They're goal is to make the site more attractive to the target customer group, create brand loyalty and enhance product placement.
 
 ### Future Features
@@ -413,7 +417,39 @@ selected to match the dreamy color design of the site with blues, grays and soft
 
 ## SEO
 
+**Sitemap**
+Sitemap.xml was generated with https://www.xml-sitemaps.com/.
+
+**Robots file**
+Robots.txt was created and included in root directory according to CI tutorial.
+
+**Page titles**
+Each page has it's own title to enhance SEO.
+
+**Keywords & metatags**
+Head of base.html contains keywords and description meta tags according to CI tutorial guidelines.
+
 ## Web marketing
+
+**Social media - facebook**
+Facebook business page was implemented to increase business visibility to social media users. Below are screenshots, as the actual page might have been deleted due to not representing a real business.
+
+![Facebook](docs/images/fb1.png)
+![Facebook](docs/images/fb2.png)
+![Facebook](docs/images/fb3.png)
+
+**Newsletter**
+Shoppers can subscribe to a newsletter embedded with Mailchimp to receive latest news, offers, etc. Newsletter form expands inside the footer after a link is clicked.
+
+![Newsletter](docs/images/newsletter.png)
+
+**Privacy policy, Terms & Conditions**
+Privacy policy, Terms & Conditions were generated according to CI tutorial and are opening in dedicated pages that can be accessed from links in the footer. 
+
+![Privacy](docs/images/privacy.png)
+
+**Stories**
+Stories app and pages as described in the Features section were implemented as part of the marketing strategy.
 
 # Technologies
 
@@ -440,6 +476,7 @@ selected to match the dreamy color design of the site with blues, grays and soft
 - [AWS](https://aws.amazon.com//) - for static storage
 - [Elephant SQL](https://www.elephantsql.com/) - PostreSQL DB
 - [Stripe](https://stripe.com/en-ie) - for payment capturing on checkout
+- [Sitemap generator](https://www.xml-sitemaps.com/) - to generate sitemap
 
 **Python modules**
 
@@ -485,7 +522,15 @@ Below steps were followed to deploy the project:
 - Add the following config vars:
   - SECRET_KEY: (secret key)
   - DATABASE_URL: (postresql url)
-  - CLOUNDINARY_URL: (cloudinary api url)
+  - PORT:	8000
+  - AWS_ACCESS_KEY_ID:	(AWS Access Key ID key)
+  - AWS_SECRET_ACCESS_KEY: (AWS Secret Access key)
+  - USE_AWS:	True
+  - STRIPE_PUBLIC_KEY: (your Stripe public key)
+  - STRIPE_SECRET_KEY: (your Stripe secret key)
+  - STRIPE_WH_SECRET: (your Stripe webhook secret key)
+  - EMAIL_HOST_PASS: (your gmail/smtp code)
+  - EMAIL_HOST_USER: (your host email)
 - On Deploy tab go to "Deployment method" and select Github
 - Go to "App connected to GitHub", type GitHub repository name to link it
 - Manual deployment was chosen on the main branch
@@ -502,30 +547,23 @@ Click on the code button -> select clone with HTTPS, SSH or GitHub CLI -> copy t
 
 ## References
 
-Below resources were used as reference when creating the project along with Stack Overflow and Code Institute Slack community posts.<br>
-[Django Wednesdays](https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy) <br>
-[Django Recipe Tutorial](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&pp=iAQB)
+The site was inspired by [Patagonia](https://eu.patagonia.com/).<br>
 
 ## Images
 
 - 403 & 404 - freefrontend.com
-- breakfast in bed - pexels-lisa-fotios-1843244
-- continental breakfast - pexels-burst-374052
-- irish breakfast - pexels-emrah-tolu-2662875
-- vegan - pexels-pixabay-236795
-- gluten free - pexels-taryn-elliott-4099238
-- hero img - pexels-magic-k-6726764
+- Hero background image - pexels-francesco-ungaro-998641
+- Hero front image - pexels-cottonbro-studio-6670074
+- Books - pexels-pavel-danilyuk-7938252
+- Lights - pexels-matheus-bertelli-13869602
+- Stories - johannes-plenio-DKix6Un55mw-unsplash
+
 
 ## Acknowledgments
 
 Big thanks to my Code Institute mentor [Daisy McGirr](https://github.com/Daisy-McG) - for her guidance, support and useful insights.
 
-## Credits
-Hero backgrond image - pexels-francesco-ungaro-998641
-Hero front image - pexels-ron-lach-8262594
-Hero front image 2 - pexels-cottonbro-studio-6670074
-Hero front image 3 - pexels-cottonbro-studio-5801245
-Books - pexels-pavel-danilyuk-7938252
-Lights - pexels-matheus-bertelli-13869602
-Stories - johannes-plenio-DKix6Un55mw-unsplash
-Story 1 - nightforest_by_maril1_dadimvp-fullview
+
+
+
+
