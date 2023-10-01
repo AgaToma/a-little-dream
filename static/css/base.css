@@ -348,6 +348,17 @@ a.nav-link,
     }
 
     .hero-background {
-        height: 60vh;
+        height: 50vh;
     }
+
+    .hero-background h1 {
+        margin-bottom: 2%;
+        font-size: 2rem;
+    }
+
+    .hero-front {
+        height: 35vh;
+    }
+
+   
 }
