@@ -27,4 +27,3 @@ class ReviewForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['rating'].widget.attrs['min'] = 1
         self.fields['rating'].widget.attrs['max'] = 5
-        

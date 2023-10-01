@@ -55,7 +55,7 @@ def edit_review(request, product_id, review_id):
                 review = form.save(commit=False)
                 review.save()
                 messages.success(request, 'Your review has been updated')
-                
+
                 return redirect(reverse('product_detail', args=[product.pk]))
             else:
                 messages.error(

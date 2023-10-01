@@ -2,26 +2,21 @@
 
 ## HTML
 
-Validator used - [W3 Markup Validator](https://validator.w3.org/). All pages were tested. Initially 2 errors were found due to button
-tag within a tag (closing button on room & booking details) and p tag within span (search bar tooltip). After fixing these home page is rendering no errors.
+Validator used - [W3 Markup Validator](https://validator.w3.org/). All pages were tested. Initially an unclosed div was found and unccessary type attributes on script tags, one of the aria-label was not matching it's element. After fixing these home page is rendering no errors. On one of the details pages, content created with django richtextfield was showing redundant HTML tags. This is fixed for newly created content by replacing Richtextfield with regular CharField in model and form. 
 
 ![HTML Validator](docs/testing/html_val.png)
-
-There are errors showing on forms pages (Create Room and New Booking) related to the form implementation. Validator also highlights errors in the Font Awesome code as rendered in the Elements of Chrome Developer Tools. Hopefully, this is acceptable, as it's not my own custom HTML. The code had to be copied from Elements section of Chrome Dev Tools and validated as text direct input due to the use of templating.
-
-![HTML form error](docs/readme_images/html_validator_form_error.png)
 
 ## CSS
 
 Custom CSS code rendered no errors in the [Jigsaw Validator](https://jigsaw.w3.org/css-validator/).
 
-![CSS validation](docs/readme_images/css_validation.png)
+![CSS validation](docs/testing/css_val.png)
 
 ## Python
 Initially small errors like trailing whitespaces, no new line at end of document were detected and corrected. All python files with the exception of settings.py are showing no errors.
 In settings.py the django auto generated code for AUTH_PASSWORD_VALIDATORS and also cloudinary storage path are showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
 
-![Python validation](docs/readme_images/pep8.png)
+![Python validation](docs/testing/pep.png)
 
 # Accessibility
 

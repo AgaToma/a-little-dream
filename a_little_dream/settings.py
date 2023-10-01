@@ -37,7 +37,6 @@ DEBUG = development
 ALLOWED_HOSTS = ['8000-agatoma-alittledream-crnpu8de9mg.ws-eu105.gitpod.io',
                  'a-little-dream-23a29b7469db.herokuapp.com', 'localhost',]
 
-
 # Application definition
 
 INSTALLED_APPS = [
