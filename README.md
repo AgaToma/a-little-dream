@@ -199,7 +199,9 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - Further products can be added and updated by admins via Django Admin UI or custom form directly on the site
 - Stock count feature implemented and displayed
 - Rating feature implemented via Reviews app
+- Product model was customized to align with business goals
 - Target age model was added to support choices for appropriate age groups
+- A model to generate sku for newly added products was created
 
 **Bag and checkout**
 
@@ -220,6 +222,7 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - All shoppers can view reviews
 - Logged in shoppers can add reviews and rating via custom form on product details
 - Ratings average is posted to product details
+- Custom review model was created
 
 **Stories**
 
@@ -227,6 +230,7 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - Admins can add, update, delete stories both via admin UI and via custom form on the website
 - Stories are linked to related products as part of marketing strategy
 - Stories are linked to appropriate age groups
+- Custom story model was created
 
 ### Features
 
@@ -401,8 +405,15 @@ Courgette and Marck Script, both cursive fonts were used to overwrite the defaul
 
 ### Imagery
 
+
 B&B logo was created on Canva. Hero image and room images were taken from [Pexels](https://www.pexels.com/). All photos were
 selected to match the light color design of the site aligned with sea, sky, cliffs and lighthouse colors of the hero image.
+
+# Web marketing and SEO
+
+## SEO
+
+## Web marketing
 
 # Technologies
 
