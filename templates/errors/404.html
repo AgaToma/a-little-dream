@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>404 - Page Not Found</h1>
+    <p>The page you have requested cannot be found.</p>
+    <img src="https://a-little-dream.s3.eu-west-1.amazonaws.com/media/403.png" alt="404 image">
+    <h4 class="p-2"><a href="{% url 'home' %}">Please go back this way</a></h4>
+</div>
+{% endblock %}

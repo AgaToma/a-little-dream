@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>403 - Unauthorized Access</h1>
+    <p>You don't have permissions to perform this action.</p>
+    <img src="https://a-little-dream.s3.eu-west-1.amazonaws.com/media/403.png" alt="403 image">
+    <h4 class="mt-2"><a href="{% url 'home' %}">Please go back this way</a></h4>
+</div>
+{% endblock %}
