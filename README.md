@@ -131,7 +131,7 @@ User stories:
 - Website is live on Heroku - As a store owner, I have a live site, so that my customers can shop
 - Documentation - As a developer, I can present detailed documentation, so that others can find out what my project is about
 
-**Epic 11 - Web Marketing** <br>
+**Epic 12 - Web Marketing** <br>
 
 - Shoppers can view store page on Facebook - As a store owner, I can reach more shoppers via social media, so that I can increase sales
 - Shoppers can subscribe to a newsletter - As a Shopper, I can subscribe to a newsletter, so that I can keep up to date with news from the store
@@ -156,14 +156,6 @@ Site is functional and maintains full presentabillity on different screen sizes 
 - Logged in shoppers can create, view, update and delete reviews (Reviews App)
 - Logged in shoppers can view and update profiles (Profiles App)
 - Superusers can create, view, update and delete orders, profiles, users - via Django admin interface 
-
-**Home page and customized user interface for guest users**
-
-- Guest users can view home page with b&b information
-- Guest users can navigate the site via navbar
-- Guest users can create accounts with email address and not username
-- Navbar is customized depending if user is logged in or not
-- Logged in guest users can perform CRUD in customized user interface (detail pages and forms on the site)
 
 **Customized user interface for admin and super users**
 
@@ -274,7 +266,7 @@ Form is provided to allow users to register. Signup template was taken from alla
 
 **Log in form and logout** <br>
 Form is provided to allow users to log in. Login template was taken from allauth module and styled to match the site appearance.Logout template was taken from allauth module and styled to match the site appearance. Before logging the user out it confirms, if user wants to log out.
-![Form image](docs/images/login.png)
+![Form image](docs/images/signin.png)
 
 #### App related
 
@@ -482,8 +474,8 @@ Stories app and pages as described in the Features section were implemented as p
 **Python modules**
 
 - Django==3.2.19
-- Django class based views - ListView, UpdateView, DeleteView, CreateView - for classes to create, edit, delete and display
-- Mixins - LoginRequiredMixin, UserPassesTestMixin - for permissions based restrictions
+- Django class based views - ListView, UpdateView, DeleteView, CreateView - for classes to create, edit, delete and display (Stories app)
+- Mixins - LoginRequiredMixin, UserPassesTestMixin - for permissions based restrictions (Stories app)
 - Q - for search queries
 - messages - for showing user feedback
 - date, datetime - for date usage and operations

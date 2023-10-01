@@ -33,16 +33,17 @@ Click all listed links and anchors -> Check if the correct page displays
 
 Tested Navigation Links:
 
-- Home -> index.html
+- Home -> index.html<br>
 Shop:
 - All Products -> products.html
 - Cuddlies, Lights, Books - products.html relevant category only
-- - Add Product - add_product.html (admin only)
+- Add Product - add_product.html (admin only)<br>
 Account:
 - Register - signup.html
 - Log in -> login.html
 - Log out -> logout.html
-- Profiles -> profile.html
+- Profiles -> profile.html<br>
+Other:
 - Stories -> stories.html
 - Bag -> bag.html
 - Search -> Expands search bar
@@ -54,7 +55,7 @@ Links from Footer:
 - Delivery and shipping - banner expands
 - Newsletter - newsletter form expands
 
-Password reset link (login.html)
+Password reset link (login.html)<br>
 Email verification link
 
 
@@ -204,8 +205,9 @@ Remove price value -> click Submit
 Form doesn't submit, a message shows to fill out the price field
 
 <hr>
+
 **Actual Results:**
-As Expected - As a result of testing edit forms, a need for Cancel button was identified to increase edit forms user friendliness.
+As Expected 
 
 **Assessment:**
 Pass
@@ -226,6 +228,7 @@ Place an order with product quantity. Check if bought product got deducted from 
 Stock quantity updated.
 
 <hr>
+
 **Actual Results:**
 As Expected - As a result of testing edit forms, a need for Cancel button was identified to increase edit forms user friendliness.
 
@@ -241,6 +244,7 @@ Increase quantity on the selector. Decrease quantity on the selector.
 Quantity changes - plus is disabled when it reaches max stock, minus is disabled at quantity 1.
 
 <hr>
+
 **Actual Results:**
 As Expected.
 
@@ -288,6 +292,7 @@ Press Checkout button.
 Checkout form appears with correct bag contents transferred to summary.
 
 <hr>
+
 **Actual Results:**
 As Expected 
 
@@ -303,6 +308,7 @@ Fillout form, enter test card in payment section. Press complete button. Go to S
 Overlay appears, order confirmed, confirmation email is received, payment successful in Stripe.
 
 <hr>
+
 **Actual Results:**
 As Expected - Initially there was a webhook issue, which was preventing sending emails and showing webhook failures. This was fixed by updating the WH secret key.
 
@@ -350,7 +356,7 @@ All pages were checked for responsiveness on different sizes inspected via Chrom
 
 While performance is below desired, due to time contraints it was not possible to improve it by further compressing images (this had already been done previously) and researching what else can be done.
 
-![Lighthouse](docs/images/lighthouse.png)
+![Lighthouse](docs/testing/lighthouse.png)
 
 # Bugs
 
