@@ -20,9 +20,7 @@ In settings.py the django auto generated code for AUTH_PASSWORD_VALIDATORS and a
 
 # Accessibility
 
-Care was taken to ensure sufficient level of accessibility and user friendliness by using semantic HTML elements, aria-labels, appropriate color contrast, different hover and active states. Initial test via [Wave](https://wave.webaim.org/) returned an error with Search button (navbar) contrast, this was corrected by applying a lighter background. Also a warning was displayed about underline on carousel slides, where active class was applied - underline has been removed from carousel active to correct this.
-
-![Accessibility](docs/readme_images/accessibility.png)
+Care was taken to ensure sufficient level of accessibility and user friendliness by using semantic HTML elements and aria-labels. Initial test via [Wave](https://wave.webaim.org/) returned contrast errors, which were corrected. It still returns an error with hero motto contrast, as being detected on white background, even though the background is dard. Also, it shows a missing form label error in the Mailchimp native code and empty link on bag icon, however the link is present. 
 
 # Responsiveness
 
@@ -30,15 +28,9 @@ All pages were checked for responsiveness on different sizes inspected via Chrom
 
 # Lighthouse Report
 
-Initial results of the report showed poorer performance than desired. This has been rectified by applying the below guidelines from the report:
+While performance is below desired, due to time contraints it was not possible to improve it by further compressing images (this had already been done previously) and researching what else can be done.
 
-- further compression of images
-- preloading background image
-- moving fontawesome script tags from head to the bottom of body element
-
-To improve SEO score, link was added to the site logo thanks to another suggestion from the report.
-
-![Lighthouse](docs/readme_images/lighthouse.png)
+![Lighthouse](docs/images/lighthouse.png)
 
 # Bugs
 

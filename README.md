@@ -422,7 +422,7 @@ selected to match the dreamy color design of the site with blues, grays and soft
 Sitemap.xml was generated with https://www.xml-sitemaps.com/.
 
 **Robots file**
-Robots.txt was created and included in root directory according to CI tutorial.
+Robots.txt was created and included in root directory templates following best practices suggested in Lighthouse report.
 
 **Page titles**
 Each page has it's own title to enhance SEO.
