@@ -14,6 +14,7 @@ The site has been thoroughly tested during development, however this document de
   - [HTML](#html)
   - [CSS](#css)
   - [Python](#python)
+  - [JS](#js)
 - [Accessibility](#accessibility)
 - [Responsiveness](#responsiveness)
 - [Lighthouse Report](#lighthouse-report)
@@ -331,6 +332,11 @@ Initially small errors like trailing whitespaces, no new line at end of document
 In settings.py the django auto generated code for AUTH_PASSWORD_VALIDATORS and also cloudinary storage path are showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
 
 ![Python validation](docs/testing/pep.png)
+
+## JS
+Javascript code pieces were tested with [JS Hint](https://jshint.com/). No errors were detected.
+
+![JS validation](docs/testing/jshint.png)
 
 # Accessibility
 
