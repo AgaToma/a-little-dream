@@ -387,11 +387,12 @@ Login, add and edit forms follow the same design.
 
 ### Database Design
 
-This project uses PostresQL database hosted on [Elephant SQL](https://www.elephantsql.com/). There are three custom models in the database: Custom User, Room and Booking. The models are related via Foreign Key relationships and . Relationship type can be viewed on the first diagram which was drawn for the design of the database using [Draw SQL](https://drawsql.app/). The second diagram was generated after completion of the project from the ready database with [DBeaver](https://dbeaver.io/).
-Social accounts, groups and emails models from allauth modules visible in Django admin were not actively used in the current version, but were left for future deployments.
+This project uses PostresQL database hosted on [Elephant SQL](https://www.elephantsql.com/). The following models are present: Product, Category, TargetAge, generate_random_sku, Order, OrderLineItem, UserProfile, Review, Story. Category, Order, OrderLineItem, UserProfile were based on Boutique Ado project, as well as Product, which was however significantly changed. generate_random_sku, Review, Story models were created for purposes of A Little Dream.
+The models are related via Foreign Key relationships and Many to Many fields. The DB diagram was generated with [DBeaver](https://dbeaver.io/).
+Social accounts, groups and sites models from allauth modules visible in Django admin were not actively used in the current version, but were left for future deployments.
 
-![Initial Schema](docs/readme_images/drawSQL_schema.png)
-![Final Schema](docs/readme_images/DBeaver_schema.png)
+![DB Schema](docs/images/eor.png)
+
 
 ## The Surface Plane
 

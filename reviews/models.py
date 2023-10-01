@@ -24,4 +24,3 @@ class Review(models.Model):
         Returns author and product name
         """
         return f"{self.user.username} - {self.product.name}"
-
