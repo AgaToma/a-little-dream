@@ -318,7 +318,8 @@ Stories can be accessed via navbar or a card from landing page. Upon clicking a 
 ### Future Features
 
 - Product match advisor
-- 
+- Users can like stories
+- Shoppers can send their own stories for submission
 
 ## The Skeleton Plane
 
@@ -329,73 +330,60 @@ Wireframes were created with Balsamiq. Click below to expand for details.
 <details>
   <summary>Home page</summary>
 
-![Home page](docs/wireframes/home_page.png)
+![Home page](docs/wireframes/home.png)
+![Home page mobile](docs/wireframes/home2.png)
 
 </details>
 <details>
   <summary>Sign up page</summary>
 
-![Sign up](docs/wireframes/sign_up.png)
+![Sign up](docs/wireframes/signup.png)
+![Sign up mobile](docs/wireframes/signup2.png)
+
+Login, add and edit forms follow the same design. 
+
+</details>
+
+<details>
+  <summary>Products page</summary>
+
+![Products](docs/wireframes/products.png)
 
 </details>
 <details>
-  <summary>Log in page</summary>
+  <summary>Product details</summary>
 
-![Log in](docs/wireframes/log_in.png)
-
-</details>
-<details>
-  <summary>Log out page</summary>
-
-![Log out](docs/wireframes/log_out.png)
+![Product details](docs/wireframes/product_details.png)
 
 </details>
 <details>
-  <summary>Rooms page</summary>
+  <summary>Stories</summary>
 
-![Rooms](docs/wireframes/our_rooms.png)
-
-</details>
-<details>
-  <summary>Create room page</summary>
-
-![Create room](docs/wireframes/create_room.png)
+![Stories](docs/wireframes/stories.png)
 
 </details>
 <details>
-  <summary>Edit room page</summary>
+  <summary>Story details page</summary>
 
-![Edit room](docs/wireframes/edit_room.png)
-
-</details>
-<details>
-  <summary>Room details page</summary>
-
-![Room details](docs/wireframes/room_details.png)
+![Story details](docs/wireframes/story_details.png)
 
 </details>
 <details>
-  <summary>New booking page</summary>
+  <summary>Bag</summary>
 
-![New booking](docs/wireframes/new_booking.png)
-
-</details>
-<details>
-  <summary>My bookings page</summary>
-
-![My bookings](docs/wireframes/my_bookings.png)
+![Bag](docs/wireframes/bag.png)
 
 </details>
 <details>
-  <summary>Booking details page</summary>
+  <summary>Checkout</summary>
 
-![Booking details](docs/wireframes/booking_details.png)
+![My bookings](docs/wireframes/checkout.png)
 
 </details>
 
 ### Database Design
 
-This project uses PostresQL database hosted on [Elephant SQL](https://www.elephantsql.com/). There are three custom models in the database: Custom User, Room and Booking. The models are related via Foreign Key relationships. Relationship type can be viewed on the first diagram which was drawn for the design of the database using [Draw SQL](https://drawsql.app/). The second diagram was generated after completion of the project from the ready database with [DBeaver](https://dbeaver.io/).
+This project uses PostresQL database hosted on [Elephant SQL](https://www.elephantsql.com/). There are three custom models in the database: Custom User, Room and Booking. The models are related via Foreign Key relationships and . Relationship type can be viewed on the first diagram which was drawn for the design of the database using [Draw SQL](https://drawsql.app/). The second diagram was generated after completion of the project from the ready database with [DBeaver](https://dbeaver.io/).
 Social accounts, groups and emails models from allauth modules visible in Django admin were not actively used in the current version, but were left for future deployments.
 
 ![Initial Schema](docs/readme_images/drawSQL_schema.png)
@@ -406,23 +394,20 @@ Social accounts, groups and emails models from allauth modules visible in Django
 ### Design
 
 Site is responsive and features multiple pages to avoid clutter. It features Bootstrap navbar and cards to
-enhance balance and responsiveness and also Bootstrap carousel for an attractive look. Bootrstrap collapsibles were implemented
-in description on home page to avoid text clutter on smaller devices. Navbar links have active class, all links highlight on hover with the exception of logo link. This link is primarily implemented for SEO optimization and highlighting logo was not in harmony with the rest of navbar.
+enhance balance and responsiveness. Bootrstrap collapsibles and off-canvas were implemented to avoid text clutter on smaller devices. Navbar links have active class and hover classes, except for logo. This link is primarily implemented for SEO optimization.
 
 ### Color palette
 
-Light colors were primarily used, whites and light grays. Light shades of green and blue were used
-for active classes and background effects. Colors were chosed to harmonize with the hero image.
+Shades of blue and greys were primarily used on primarily white background with some black elements like buttons. Colors harmonize with the starry night hero background and the soft browns of hero image. 
 
 ### Typography
 
-Courgette and Marck Script, both cursive fonts were used to overwrite the default Bootstrap and browser styles for navbar and headings only. Fonts were obtained from Google fonts.
+Permanent Marker font was used for headings and Caveat font was used for mottos. These fonts add a carefree touch to the site and by evoking a handwriting image. Fonts were obtained from Google fonts.
 
 ### Imagery
 
-
-B&B logo was created on Canva. Hero image and room images were taken from [Pexels](https://www.pexels.com/). All photos were
-selected to match the light color design of the site aligned with sea, sky, cliffs and lighthouse colors of the hero image.
+Store logo was created on Canva. Images were taken from [Pexels](https://www.pexels.com/). All photos were
+selected to match the dreamy color design of the site with blues, grays and soft browns as dominating colors.
 
 # Web marketing and SEO
 
@@ -441,9 +426,9 @@ selected to match the light color design of the site aligned with sea, sky, clif
 - [Favicon.io](https://favicon.io/) - to make favicon
 - [Google fonts](https://fonts.google.com/) - Courgette and Marck Script fonts were used
 - Chrome Dev Tools - testing/validation/troubleshooting.
-- [CodeAnywhere](https://app.codeanywhere.com/) - website was developed with this IDE in Chrome
 - GitHub - for hosting source code
 - Git - used to commit and push code during the development of the Website
+- Gitpod - website was developed with this IDE in Chrome
 - [Tinypng](https://tinypng.com/) - was used to reduce the size of the images
 - [Convertio](https://convertio.co/) - for JPG format gallery photos to webp
 - Balsamiq - to create wireframes
@@ -452,8 +437,9 @@ selected to match the light color design of the site aligned with sea, sky, clif
 - [Font Awesome](https://fontawesome.com/) - for icons on the site
 - [DrawSQL](https://drawsql.app/) - to create initial DB schema
 - [DBeaver](https://dbeaver.io/) - to create ER diagram after deployment
-- [Cloudinary](https://cloudinary.com/) - for static storage
+- [AWS](https://aws.amazon.com//) - for static storage
 - [Elephant SQL](https://www.elephantsql.com/) - PostreSQL DB
+- [Stripe](https://stripe.com/en-ie) - for payment capturing on checkout
 
 **Python modules**
 
@@ -463,7 +449,6 @@ selected to match the light color design of the site aligned with sea, sky, clif
 - Q - for search queries
 - messages - for showing user feedback
 - date, datetime - for date usage and operations
-- cloudinary==1.32.0 - static file/image storage
 - dj-database-url==0.5.0 - o parse database url for production environment
 - dj3-cloudinary-storage==0.0.6 - storage system to work with cloudinary
 - django-allauth==0.54.0 - for authentication
@@ -473,7 +458,7 @@ selected to match the light color design of the site aligned with sea, sky, clif
 - django-richtextfield==1.6.1 - for using custom styling on form fields
 - django-crispy-forms==2.0 - for serving forms
 - crispy-bootstrap5==0.7 - allow bootstrap5 use with crispy forms
-- whitenoise - to solve issue with static file loading after deployment to Heroku
+- stripe==6.5.0 - for payment capturing
 
 # Testing
 
