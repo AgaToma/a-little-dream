@@ -131,28 +131,23 @@ a.nav-link,
 /* Landing page */
 .hero-background {
     background-image: url('../../media/hero-background.webp');
-    height: 80vh;
+    height: 95vh;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1%;
     margin-bottom: 2%;
 }
 
-.hero-wrap {
-    width: 50%;
-    height:100%;
-}
 
-
-.hero-wrap h1 {
+.hero-background h1 {
     color:rgb(239, 247, 247);
-    margin: 6%;
+    margin: 1%;
     font-family: 'Caveat', cursive;
     font-size: 4rem;
 }
 
 .hero-front {
-    width:80%;
+    height:70vh;
     border-radius: 5px;
 }
 
@@ -345,12 +340,6 @@ a.nav-link,
     min-height: 10px;
     display: grid;
 }
-
-  @media (max-width: 1000px) {
-    .hero-wrap {
-        width:100%;
-    }
-  }
 
 /* Viewport between 320px - 460 px*/
 @media screen and (max-width: 460px) {
